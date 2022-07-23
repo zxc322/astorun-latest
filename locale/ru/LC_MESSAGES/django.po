@@ -1,0 +1,509 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-20 13:57+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: FrontendPractice/settings.py:143
+msgid "English"
+msgstr ""
+
+#: FrontendPractice/settings.py:144
+msgid "Russian"
+msgstr "Русский"
+
+#: FrontendPractice/settings.py:145
+msgid "Ukrainian"
+msgstr "Украинский"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:7
+msgid "BOOKMARKS"
+msgstr "ИЗБРАННОЕ"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:17
+#: collection/templates/collection/buy_collection.html:20
+#: collection/templates/collection/slider_collection.html:33
+#: collection/templates/collection/slider_collection.html:98
+#: collection/templates/collection/slider_collection.html:160
+#: order/templates/order/completed_detail.html:15
+msgid "Title"
+msgstr "Название"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:18
+#: collection/templates/collection/buy_collection.html:22
+#: collection/templates/collection/slider_collection.html:34
+#: collection/templates/collection/slider_collection.html:99
+#: collection/templates/collection/slider_collection.html:161
+msgid "Price"
+msgstr "Цена"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:20
+msgid "Collection"
+msgstr "Коллекция"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:27
+msgid "View"
+msgstr "Подробнее"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:29
+msgid "Remove"
+msgstr "Удалить"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:41
+msgid "Remove all"
+msgstr "Удалить всё"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:51
+msgid "YOUR BOOKMARKS LIST IS EMPTY"
+msgstr "НЕТ ТОВАРОВ В ИЗБРАННОМ"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:56
+#: order/templates/order/cart.html:120
+msgid "TO SHOP"
+msgstr "В МАГАЗИН"
+
+#: bookmarks/templates/bookmarks/bookmarks.html:62
+#: order/templates/order/cart.html:126
+msgid "TO COLLECTIONS"
+msgstr "К КОЛЛЕКЦИЯМ"
+
+#: collection/templates/collection/buy_collection.html:8
+msgid "ORDER AS COLLECTION"
+msgstr "ЗАКАЗ КОЛЛЕКЦИИ"
+
+#: collection/templates/collection/buy_collection.html:21
+#: collection/templates/collection/slider_collection.html:35
+#: collection/templates/collection/slider_collection.html:100
+#: collection/templates/collection/slider_collection.html:162
+msgid "Category"
+msgstr "Категория"
+
+#: collection/templates/collection/buy_collection.html:23
+#: collection/templates/collection/slider_collection.html:41
+#: collection/templates/collection/slider_collection.html:106
+#: collection/templates/collection/slider_collection.html:169
+#: order/templates/order/completed_detail.html:21
+msgid "Size"
+msgstr "Размер"
+
+#: collection/templates/collection/buy_collection.html:24
+#: collection/templates/collection/slider_collection.html:56
+#: collection/templates/collection/slider_collection.html:120
+#: collection/templates/collection/slider_collection.html:185
+#: order/templates/order/completed_detail.html:22
+msgid "Color"
+msgstr "Цвет"
+
+#: collection/templates/collection/buy_collection.html:25
+msgid "Details"
+msgstr "Подробней"
+
+#: collection/templates/collection/buy_collection.html:37
+#: order/templates/order/cart.html:47
+msgid "Order form"
+msgstr "Заказ"
+
+#: collection/templates/collection/buy_collection.html:39
+#: order/templates/order/cart.html:49
+msgid "name"
+msgstr "имя"
+
+#: collection/templates/collection/buy_collection.html:41
+#: order/templates/order/cart.html:51
+msgid "phone"
+msgstr "телефон"
+
+#: collection/templates/collection/buy_collection.html:44
+msgid "Your discount"
+msgstr "Скидка"
+
+#: collection/templates/collection/buy_collection.html:46
+msgid "Order price"
+msgstr "Общая стоимость:"
+
+#: collection/templates/collection/buy_collection.html:51
+#: order/templates/order/cart.html:62
+msgid "Delivery info"
+msgstr "Информация для доставки"
+
+#: collection/templates/collection/buy_collection.html:79
+#: order/templates/order/cart.html:90
+msgid "district (optional)"
+msgstr "район (не обязательно)"
+
+#: collection/templates/collection/buy_collection.html:80
+#: order/templates/order/cart.html:91
+msgid "city or town"
+msgstr "город или село"
+
+#: collection/templates/collection/buy_collection.html:81
+#: order/templates/order/cart.html:92
+msgid "nova poshta №"
+msgstr "отделение новой почты"
+
+#: collection/templates/collection/buy_collection.html:82
+#: order/templates/order/cart.html:93
+msgid "comment (optional)"
+msgstr "комментарий (не обязательно)"
+
+#: collection/templates/collection/buy_collection.html:92
+#: order/templates/order/cart.html:100
+msgid "Checkout"
+msgstr "Оформить"
+
+#: collection/templates/collection/buy_collection.html:100
+msgid "Cancel"
+msgstr "Отмена"
+
+#: collection/templates/collection/collection.html:10
+msgid "OUR COLLECTIONS"
+msgstr "НАШИ КОЛЛЕКЦИИ"
+
+#: collection/templates/collection/collection.html:12
+#: product/templates/product/category.html:10
+msgid "Men"
+msgstr "Мужчинам"
+
+#: collection/templates/collection/collection.html:13
+#: product/templates/product/category.html:11
+msgid "Women"
+msgstr "Женщинам"
+
+#: collection/templates/collection/collection.html:14
+#: product/templates/product/category.html:12
+msgid "Kids"
+msgstr "Детям"
+
+#: collection/templates/collection/slider_collection.html:34
+#: collection/templates/collection/slider_collection.html:99
+#: collection/templates/collection/slider_collection.html:161
+#: collection/templates/collection/slider_collection.html:207
+#: order/templates/order/cart.html:25 order/templates/order/cart.html:27
+#: order/templates/order/cart.html:55 order/templates/order/cart.html:57
+#: order/templates/order/cart.html:59 order/templates/order/completed.html:19
+#: order/templates/order/completed.html:20
+#: order/templates/order/completed.html:32
+#: order/templates/order/completed_detail.html:17
+#: order/templates/order/completed_detail.html:19
+#: order/templates/order/completed_detail.html:24
+#: product/templates/product/product_detail.html:31
+msgid "UAH"
+msgstr "ГРН"
+
+#: collection/templates/collection/slider_collection.html:36
+#: collection/templates/collection/slider_collection.html:101
+#: collection/templates/collection/slider_collection.html:163
+#: order/templates/order/completed.html:22
+#: order/templates/order/completed.html:35
+msgid "View details"
+msgstr "Подробней"
+
+#: collection/templates/collection/slider_collection.html:205
+msgid "Chosen items"
+msgstr "Выбрано товаров"
+
+#: collection/templates/collection/slider_collection.html:206
+msgid "Discount"
+msgstr "Скидка"
+
+#: collection/templates/collection/slider_collection.html:207
+msgid "Items price with discount"
+msgstr "Цена со скидкой"
+
+#: collection/templates/collection/slider_collection.html:214
+msgid "Make order"
+msgstr "Сделать заказ"
+
+#: collection/templates/collection/slider_collection.html:226
+msgid "No products in collection"
+msgstr "Нет товаров в коллекции"
+
+#: collection/templates/collection/slider_collection.html:230
+msgid "GO BACK"
+msgstr "НАЗАД"
+
+#: contacts/templates/contacts/contacts.html:6
+msgid "OUR CONTACTS"
+msgstr "НАШИ КОНТАКТИ"
+
+#: contacts/templates/contacts/contacts.html:11
+msgid "Phone"
+msgstr "Телефон"
+
+#: contacts/templates/contacts/contacts.html:17
+msgid "Mail"
+msgstr "Почта"
+
+#: contacts/templates/contacts/contacts.html:23
+msgid "Telegram"
+msgstr "Телеграм"
+
+#: contacts/templates/contacts/contacts.html:29
+msgid "Viber"
+msgstr "Вайбер"
+
+#: contacts/templates/contacts/contacts.html:34
+msgid "Facebook Messenger"
+msgstr "Фейсбук месенджер"
+
+#: contacts/templates/contacts/contacts.html:42
+msgid "Input your name"
+msgstr "Ваше имя"
+
+#: contacts/templates/contacts/contacts.html:43
+msgid "Input your email"
+msgstr "Ваш email"
+
+#: contacts/templates/contacts/contacts.html:45
+msgid "Input your message"
+msgstr "Введите ваше сообщение"
+
+#: contacts/templates/contacts/contacts.html:48
+msgid "Send"
+msgstr "Отправить"
+
+#: mainFront/templates/mainFront/base.html:90
+#: mainFront/templates/mainFront/main.html:39
+msgid "SHOP"
+msgstr "МАГАЗИН"
+
+#: mainFront/templates/mainFront/base.html:91
+#: mainFront/templates/mainFront/main.html:40
+msgid "COLLECTIONS"
+msgstr "КОЛЛЕКЦИИ"
+
+#: mainFront/templates/mainFront/base.html:92
+#: mainFront/templates/mainFront/main.html:41
+msgid "NEWS"
+msgstr "НОВОСТИ"
+
+#: mainFront/templates/mainFront/base.html:93
+#: mainFront/templates/mainFront/main.html:42
+msgid "CONTACTS"
+msgstr "КОНТАКТИ"
+
+#: mainFront/templates/mainFront/base.html:119
+msgid "Shop"
+msgstr "Магазин"
+
+#: mainFront/templates/mainFront/base.html:122
+msgid "Collections"
+msgstr "Коллекции"
+
+#: mainFront/templates/mainFront/base.html:125
+msgid "News"
+msgstr "Новости"
+
+#: mainFront/templates/mainFront/base.html:128
+msgid "Contacts"
+msgstr "Контакты"
+
+#: mainFront/templates/mainFront/base.html:191
+msgid "Product was successfully added to the cart"
+msgstr "Продукт успешно добавлен в корзину"
+
+#: mainFront/templates/mainFront/base.html:192
+msgid "Make order more than 999 UAH and don't pay for delivery"
+msgstr "Сделайте заказ не меньше чем на 999 ГРН и не платите за доставку"
+
+#: mainFront/templates/mainFront/base.html:194
+msgid "Go to cart"
+msgstr "В корзину"
+
+#: mainFront/templates/mainFront/base.html:202
+msgid "Delete item from the cart"
+msgstr "Удалить товар с корзины"
+
+#: mainFront/templates/mainFront/base.html:205
+msgid "YES"
+msgstr "ДА"
+
+#: mainFront/templates/mainFront/base.html:209
+msgid "NO"
+msgstr "НЕТ"
+
+#: mainFront/templates/mainFront/base.html:217
+msgid "RULES"
+msgstr "ПРАВИЛА"
+
+#: mainFront/templates/mainFront/base.html:218
+msgid "OFFER"
+msgstr "ОФЕРТА"
+
+#: mainFront/templates/mainFront/base.html:219
+msgid "DELIVERY"
+msgstr "ДОСТАВКА"
+
+#: mainFront/templates/mainFront/page404.html:15
+msgid "The page you are looking for does not exist"
+msgstr "Страницы, которую Вы ищете не существует"
+
+#: news/templates/news/load_news.html:23
+msgid "Back to news"
+msgstr "Назад к новостям"
+
+#: news/templates/news/load_news.html:26
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: news/templates/news/load_news.html:32
+msgid "Next"
+msgstr "Следующая"
+
+#: news/templates/news/news.html:8
+msgid "LATEST NEWS"
+msgstr "ПОСЛЕДНИЕ НОВОСТИ"
+
+#: news/templates/news/news.html:31
+msgid "more"
+msgstr "детальнее"
+
+#: news/templates/news/news.html:32
+msgid "LOAD NEWS"
+msgstr "СЛЕДУЮЩАЯ НОВОСТЬ"
+
+#: order/templates/order/cart.html:7
+msgid "YOUR PRODUCTS"
+msgstr "ПРОДУКТЫ В КОРЗИНЕ"
+
+#: order/templates/order/cart.html:19
+msgid "Item name:"
+msgstr "Название товара:"
+
+#: order/templates/order/cart.html:23
+msgid "Item size"
+msgstr "Размер"
+
+#: order/templates/order/cart.html:24
+msgid "Item color"
+msgstr "Цвет"
+
+#: order/templates/order/cart.html:25
+msgid "Item price"
+msgstr "Цена"
+
+#: order/templates/order/cart.html:26
+msgid "Total price"
+msgstr "Общая стоимость"
+
+#: order/templates/order/cart.html:54
+msgid "Products price"
+msgstr "Цена за товары"
+
+#: order/templates/order/cart.html:56
+msgid "Delivery price"
+msgstr "Цена за доставку"
+
+#: order/templates/order/cart.html:58
+msgid "Total order price"
+msgstr "Общая стоимость"
+
+#: order/templates/order/cart.html:115
+msgid "YOUR CART IS EMPTY"
+msgstr "НЕТ ТОВАРОВ В КОРЗИНЕ"
+
+#: order/templates/order/completed.html:6
+msgid "MY ORDERS"
+msgstr "МОИ ЗАКАЗЫ"
+
+#: order/templates/order/completed.html:9
+msgid "as product"
+msgstr "как продукт"
+
+#: order/templates/order/completed.html:10
+msgid "as collection"
+msgstr "как коллекция"
+
+#: order/templates/order/completed.html:17
+#: order/templates/order/completed.html:30
+msgid "ORDER ID"
+msgstr "ID заказа"
+
+#: order/templates/order/completed.html:18
+#: order/templates/order/completed.html:31
+msgid "CREATED"
+msgstr "БЫЛ СОЗДАН"
+
+#: order/templates/order/completed.html:19
+#: order/templates/order/completed.html:32
+msgid "ORDER PRICE"
+msgstr "ЦЕНА ЗАКАЗА"
+
+#: order/templates/order/completed.html:20
+msgid "DELIVERY PRICE"
+msgstr "ЦЕНА ДОСТАВКИ"
+
+#: order/templates/order/completed.html:21
+#: order/templates/order/completed.html:34
+msgid "ORDER STATUS"
+msgstr "СТАТУС ЗАКАЗА"
+
+#: order/templates/order/completed.html:33
+msgid "DISCOUNT FOR THIS ORDER"
+msgstr "СКИДКА НА ЭТОТ ЗАКАЗ"
+
+#: order/templates/order/completed_detail.html:6
+msgid "Order ID"
+msgstr "ID Заказа"
+
+#: order/templates/order/completed_detail.html:17
+#: order/templates/order/completed_detail.html:19
+msgid "Price per item"
+msgstr "Цена товара"
+
+#: order/templates/order/completed_detail.html:24
+msgid "total"
+msgstr "Общая стоимотсь"
+
+#: order/templates/order/completed_detail.html:33
+#: product/templates/product/product_detail.html:90
+msgid "To shop"
+msgstr "В магазин"
+
+#: order/templates/order/completed_detail.html:34
+msgid "All my orders"
+msgstr "Мои заказы"
+
+#: product/templates/product/category.html:85
+msgid "Still no products in category"
+msgstr "Пока нет товаров в коллекции"
+
+#: product/templates/product/category.html:90
+msgid "ALL CATEGORIES"
+msgstr "ВСЕ КАТЕГОРИИ"
+
+#: product/templates/product/product_detail.html:63
+msgid "Buy"
+msgstr "Купить"
+
+#: product/templates/product/product_detail.html:82
+msgid "Previous product"
+msgstr "Предыдущий продукт"
+
+#: product/templates/product/product_detail.html:86
+msgid "Next product"
+msgstr "Следующий продукт"
+
+#: product/templates/product/product_detail.html:92
+msgid "See in collection"
+msgstr "Открыть в коллекции"
+
+#: product/templates/product/shop.html:6
+msgid "OUR PRODUCTS"
+msgstr "НАШИ ПРОДУКТЫ"

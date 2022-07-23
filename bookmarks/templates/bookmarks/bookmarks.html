@@ -1,0 +1,67 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}order{%endblock%}
+{% load i18n %}
+{% block content%}
+{% if bookmarks %}
+    <h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{% trans 'BOOKMARKS' %}</h1>
+
+{% for item in bookmarks %}
+<div class="bookmarks-wrapper">
+    <div class="bookmark_item">
+        <div class="bookmark_img">
+            <img src="{{ item.main_image.url }}">
+        </div>
+        <div class="bookmark_details_wrapper">
+            <div class="bookmark_details">
+                <p><span>{% trans 'Title' %}: {{item.title}}</span></p>
+                <p><span>{% trans 'Price' %}: {{item.price}}</span></p>
+                {% if item.collection %}
+                    <p><span>{% trans 'Collection' %}: {{item.collection}}</span></p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="bookmark_options">
+
+                <button class="buy_from_bookmark_button" type="submit">
+                    <a href="{% url 'product:product_detail' item.gender item.category.slug item.slug%}">{% trans 'View' %} </a></button>
+
+            <button class="remove_from_bookmark_button" type="submit" data-id="{{item.id}}">{% trans 'Remove' %}</button>
+        </div>
+
+    </div>
+
+</div>
+{% endfor %}
+
+<form action="{% url 'bookmarks:remove_bookmarks' %}" method="post">{% csrf_token %}
+
+                    <input type="hidden" name="url_from" value="{{request.path}}">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <button class="remove_book_but" type="submit">{% trans 'Remove all' %}</button>
+                    </div>
+                </form>
+{% else %}
+    
+
+    <div class="empty-page-logo">
+        <img src="/static/mainFront/img/empty.svg">
+    </div>
+
+    <div class="empty-page-title">{% trans 'YOUR BOOKMARKS LIST IS EMPTY' %}</div>
+
+    <div style="text-align: center; margin-bottom: 45px;">
+		<a href="{% url 'product:shop' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'TO SHOP' %}
+			</div>
+		</a>
+
+        <a href="{% url 'collection:collection' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'TO COLLECTIONS' %}
+			</div>
+		</a>
+	</div>
+{% endif %}
+{% endblock %}

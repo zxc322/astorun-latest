@@ -1,0 +1,43 @@
+.select {
+	position: relative;
+	width: 100px;
+	text-align: center;
+}
+.select.is-active .select__body {
+	display: block;
+}
+
+.select__header {
+    text-align: center;
+	border: 1px solid black;
+	cursor: pointer;
+	background: #dd5145;
+	color:  #fff;
+}
+.select__current {
+    text-align: center;
+	font-size: 18px;
+	line-height: 14px;
+	padding: 2px;
+}
+
+.select__body {
+	border: 2px solid black;
+	border-top: 0;
+	display: none;
+	left: 0;
+	/*position: absolute;*/
+	right: 0;
+	top: 100%;
+}
+.select__item {
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 14px;
+	font-weight: 600;
+	padding: 2px;
+}
+
+.select__item:hover {
+	background-color: #dd5145;
+}

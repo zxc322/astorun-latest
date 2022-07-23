@@ -1,0 +1,37 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}order{%endblock%}
+{% load i18n %}
+{% block content%}
+<h1 style="text-align: center; margin-top: 90px;  font-size: 26px;"> {% trans 'Order ID' %}: {{order_id}} </h1>
+<div class="comp-det-wrap-wrapper">
+    <div class="completed-detail-wrapper">
+    {% for item in order %}
+            <div class="item_in_order">
+                <div class="completed_img">
+                    <img src="{{item.product.main_image.url}}">
+                </div>
+                <div class="completed_info">
+                    <span class="comp completed_title">{% trans 'Title' %}: {{ item.product.title }}</span><br>
+                    {% if item.quantity %}
+                    <span class="comp completed_price"> {% trans 'Price per item' %}: {{ item.product.price }} {% trans 'UAH' %}  x {{ item.quantity }}</span><br>
+                    {% else %}
+                    <span class="comp completed_price"> {% trans 'Price per item' %}: {{ item.product.price }} {% trans 'UAH' %}</span><br>
+                    {% endif %}
+                    <span class="comp completed_size"> {% trans 'Size' %}: {{ item.size }}</span><br>
+                    <span class="comp completed_size"> {% trans 'Color' %}: {{ item.color }}</span><br>
+                    {% if item.total_price %}
+                    <span class="comp completed_size">{% trans 'total' %}: {{ item.total_price }} {% trans 'UAH' %} </span><br>
+                    {% endif %}
+                </div>
+            </div><hr class="hr">
+
+
+    {% endfor %}
+    </div>
+    <div class="completed-buttons">
+        <a  href="{% url 'product:shop' %}"><button class="comp-button" type="button">{% trans 'To shop' %}</button></a>
+        <a  href="{% url 'order:completed_orders' %}"><button class="comp-button" type="button">{% trans 'All my orders' %}</button></a>
+    </div>
+</div>
+{% endblock %}

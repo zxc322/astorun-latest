@@ -1,0 +1,212 @@
+.detail_wrapper{
+    text-align: center;
+    align-items: center;
+    max-width: 650px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.image-box-wrapper{
+    position: relative;
+    margin: auto;
+}
+
+.image_box{
+    margin: 40px auto;
+    width: 525px;
+    height: 525px;
+    overflow: hidden;
+    box-shadow: 0 0 17px 3px rgba(0, 0, 0, 0.6);
+}
+
+.image-wrapper{
+    width: 270px;
+}
+
+.image-wrapper img{
+    height: 100%;
+    width: 100%;
+}
+
+.image_box .slick-arrow.slick-prev{
+    top: 228px;
+    left: 10px;
+}
+
+.image_box .slick-arrow.slick-next{
+    top: 228px;
+    right: 10px;
+}
+
+.image_box .slick-track{
+    display: flex;
+    height: 525px;
+}
+
+.product_details_box{
+    max-width: 660px;
+    margin: auto;
+}
+
+.red-wrapper{
+    display: flex;
+    justify-content: space-between;
+    max-width: 270px;
+    margin: auto;
+    min-height: 50px;
+}
+
+.single-price{
+    color: #b91313;
+    
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.single-select-form{
+    width: 115px;
+    height: 35px;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 10px;
+
+}
+
+.single-option-form{
+    height: 40px;
+    border-radius: 5px;
+
+}
+
+.single-button{
+    width: 85px;
+    height: 35px;
+    background: #dd5145;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    margin: 0 10px;
+}
+
+.single-button:hover{
+    transition: .2s;
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+.single-description{
+    margin: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: oblique
+    display: flex;
+    justify-content: space-around;
+}
+
+.single-description img{
+    fill: red;
+}
+
+.single-bot-link-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.single-bot-link {
+    height: 48px;
+    width: 230px;
+    border: 2px solid #dd5145;
+    border-radius: 7px;
+    color: #b91313;
+    margin: 10px;
+    padding: 7px 0;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.to-shop{
+    display: inline-block;
+}
+
+.single-bot-link:hover{
+    background: #dd5145;
+    color: white;
+    transition: .2s;
+}
+
+.my-popup, .del-popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 22;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s linear;
+}
+
+.my-popup-container{
+    padding: 0 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.my-popup-body{
+    margin: auto;
+    width: 540px;
+    background: white;
+    min-height: 250px;
+    text-align: center;
+    padding: 40px 30px 0 30px;
+    transition: all .2s linear;
+    border-radius: 10px;
+}
+
+.my-popup-text{
+    font-size: 24px;
+    font-weight: 600;
+    
+}
+
+.show-popup{
+    background-color: rgba(0, 0, 0, .7);
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.my-popup-close, .my-popup-close a{
+    width: 135px;
+    height: 35px;
+    margin: 55px 20px;
+    border: none;
+    background: #e92525;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: .1s;
+}
+
+
+.my-popup-close:hover{
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.4);
+
+}
+
+.my-popup-close a:hover{
+    color: white;
+}
+
+.my-popup-body:hover{
+    box-shadow: 0 0 10px 5px rgba(62, 221, 45, 0.4);
+}
+
+.form-inline{
+    
+}

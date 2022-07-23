@@ -1,0 +1,126 @@
+.remove_book_but{
+    height: 40px;
+    width: 180px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    color: #dd5145;
+    font-style:italic;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.remove_book_but:hover{
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    background: #dd5145;
+    transition: .2s
+}
+
+.bookmarks-wrapper{
+    padding: 50px;
+}
+
+.bookmark_item{
+    max-width: 1000px;
+    min-height: 230px;
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    font-size: 18px;
+    
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 0 6px 2px rgb(0 0 0 / 40%);
+}
+
+.bookmark_item:hover{
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+    transition: .2s;
+}
+
+.bookmark_img{
+    margin: auto 20px;
+    height: 200px;
+
+}
+
+.bookmark_img img{
+    width: 200px;
+    height: 100%;
+}
+
+.remove_from_bookmark_button{
+    height: 40px;
+    width: 100px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: #dd5145;
+    font-style:italic;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.remove_from_bookmark_button:hover{
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    background: #dd5145;
+    transition: .2s
+}
+
+.buy_from_bookmark_button{
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    font-style:italic;
+    font-weight: 500;
+    font-size: 18px;
+    background: transparent;
+}
+
+.buy_from_bookmark_button a{
+    text-decoration: underline;
+    color: black;
+}
+
+.buy_from_bookmark_button a:hover{
+    text-decoration: none;
+    color: #dd5145 !important;
+}
+
+
+
+.bookmarks_options{
+    font-style:italic;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.bookmark_details_wrapper{
+    position: relative;
+    width: 50%;
+    margin-right: 20px;
+}
+
+.bookmark_details{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*margin-right: -50%;*/
+    transform: translate(-50%, -50%);
+}
+
+.filling{
+    fill: red;
+}
+
+.bookmark_options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 40px;
+}

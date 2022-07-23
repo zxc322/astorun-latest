@@ -1,0 +1,124 @@
+.wrap-wrap-wrapper{
+    text-align: center;
+}
+
+.wrap-wrapper{
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.col-buy-wrapper{
+    right: 0;
+    margin: 64px 20px 40px;
+    width: 600px;
+
+}
+
+.item-card{
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    height: 220px;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.col-buy-image{
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.col-buy-image img{
+    height: 100%;
+    width: 100%;
+}
+
+.col-buy-details-wrapper{
+    width: 70%;
+    padding-top: 10px;
+}
+
+.col-buy-details{
+    margin: auto;
+    
+    font-size: 19px;
+    font-weight: 400;
+}
+
+
+
+
+.col-buy-form-wrapper{
+    width: 600px;
+    margin: 83px 20px 40px;
+
+}
+.col-buy-form{
+    width: 100%;
+    padding: 20px;
+    padding-top: 28px;
+
+}
+
+.form1{
+    text-align: center;
+}
+
+.cancel{
+    background: #e82828;
+    padding-top: 7px;
+    font-size: 22px;
+    font-weight: 500;
+    
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    margin: 50px auto;
+    display: inline-block;
+    transition: .1s;
+}
+
+.cancel-a{
+    text-decoration: none;
+    color: white;
+    transition: .1s;
+}
+
+.cancel:hover{
+    background: #b22222;
+}
+
+.cancel-a:hover{
+    color: white;
+}
+
+.discount-info{
+    text-align: center;
+    
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.desc-col{
+    max-width: 220px;
+}
+
+.details-link{
+    color: #6d5454;
+    text-decoration: none;
+    transition: .3s;
+    font-size: 18px;
+    
+}
+
+.details-link:hover{
+    color: #a30000;
+    transform: scale(1.1);
+}

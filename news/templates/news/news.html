@@ -1,0 +1,40 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}news{%endblock%}
+{% load i18n %}
+{% block content%}
+<h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{% trans 'LATEST NEWS' %}</h1>
+
+<div class="news-wrapper ">
+    <div class="test-div">
+
+    </div>
+    <div class="news-content">
+        {% for f in news %}
+            <div class="news-article">
+                <div class="news-main-image">
+                    <img src="{{f.main_image.url}}">
+                </div>
+                <div class="news-titles">
+                    <div class="news-title">
+                        {{f.title}}
+                    </div>
+                    <div class="news-date">
+                        {{f.date}}
+                    </div>
+                </div>
+                <div class="news-text" style="font-style: initial">
+                        {{f.text|truncatewords:30}}
+                </div>
+                <a class="more-news" href="{% url 'news:load_news' f.slug %}">{% trans 'more' %}</a>
+                <button class="load-news" type="button">{% trans 'LOAD NEWS' %}</button>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'news/css/news.css' %}">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="{% static 'news/js/news_show.js' %}"></script>
+{% endblock %}

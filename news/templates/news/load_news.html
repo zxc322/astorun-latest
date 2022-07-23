@@ -1,0 +1,47 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}news{%endblock%}
+{% load i18n %}
+{% block content%}
+{% for f in page_obj %}
+    <h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{{f.title}}</h1>
+
+    <div class="news-more-block">
+        <div class="news-slider-wrapper">
+                <div class="news-slider ">
+                {% for image in images %}
+                    <div class="image-wrapper">
+                        <img src="{{image.images.url}}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="news-full-text">
+            {{f.text|linebreaks}}
+        </div>
+        <div class="news-nav-links">
+            <a href="{% url 'news:news' %}">{% trans 'Back to news' %}</a>
+            
+            {% if prev_slug != None %}
+                <a href="{% url 'news:load_news' prev_slug %}">{% trans 'Previous' %}</a>
+            {% else %}
+                <div style="visibility: hidden;">xd</div>
+            {% endif %}
+            
+            {% if next_slug != None %}
+                <a href="{% url 'news:load_news' next_slug %}">{% trans 'Next' %}</a>
+            {% else %}
+                <div style="visibility: hidden;">xd</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endfor %}
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="{% static 'news/js/news_slider.js' %}"></script>
+{% endblock %}

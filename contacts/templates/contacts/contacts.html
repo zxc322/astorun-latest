@@ -1,0 +1,73 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}contacts{%endblock%}
+{% load i18n %}
+{% block content%}
+<h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{% trans 'OUR CONTACTS' %}</h1>
+
+<div class="contacts-section">
+    <ul class="our-contacts">
+        <li class="contact-item">
+            <div class="contact-caption">{% trans 'Phone' %}</div>
+            <a href="tel:+380962790520" class="contacts__link">
+                <span class="contacts__icon fas fa-phone"></span>+380962790520</a>
+        </li>
+
+        <li class="contact-item">
+            <div class="contact-caption">{% trans 'Mail' %}</div>
+            <a href="mailto:astorun@mail.co" class="contacts__link">
+                <span class="contacts__icon fas fa-envelope"></span>astorun@mail.co</a>
+        </li>
+
+        <li class="contact-item">
+            <div class="contact-caption">{% trans 'Telegram' %}</div>
+            <a target="_blank" href="https://t.me/astorun" class="contacts__link">
+                <span class="contacts__icon fab fa-telegram-plane"></span>@astorun</a>
+        </li>
+
+        <li class="contact-item">
+            <div class="contact-caption">{% trans 'Viber' %}</div>
+            <a href="viber://chat?number=+380962790520" class="contacts__link">
+                <span class="contacts__icon fab fa-viber"></span>+380962790520</a>
+        </li>
+        <li class="contact-item">
+            <div class="contact-caption">{% trans 'Facebook Messenger' %}</div>
+            <a href="https://m.me/astorun" target="_blank" class="contacts__link">
+                <span class="contacts__icon fab fa-facebook-messenger"></span>astorun</a>
+        </li>
+
+    </ul>
+    <div class="contacts-form">
+        <form method="post" action="{% url 'contacts:get_form' %}">{% csrf_token %}
+        <input class="form1-group contacts-field" name="customer_name" type="text" placeholder="{% trans 'Input your name' %}" required>
+        <input class="form1-group contacts-field" name="customer_email" type="email" placeholder="{% trans 'Input your email' %}" required>
+        <textarea class=" contacts-field textarea"
+                  name="customer_message"  placeholder="{% trans 'Input your message' %}" required></textarea>
+
+        <div class="contacts-button">
+            <button class="contacts-send load-news" type="submit">{% trans 'Send' %}</button>
+        </div>
+        </form>
+    </div>
+</div>
+
+<div class="bottom-media-links">
+    <ul class="social-list">
+        <li class="social-list__item">
+            <a target="_blank" href="https://facebook.com/astorun" class="social-list__link">
+                <span class="fab fa-facebook-square"></span>
+            </a>
+        </li>
+        <li class="social-list__item">
+            <a target="_blank" href="https://instagram.com/astorun" class="social-list__link">
+                <span class="fab fa-instagram"></span>
+            </a>
+        </li>
+        <li class="social-list__item">
+            <a target="_blank" href="https://youtube.com/astorun" class="social-list__link">
+                <span class="fab fa-youtube"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

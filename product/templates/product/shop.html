@@ -1,0 +1,16 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}Shop{%endblock%}
+{% load i18n %}
+{% block content %}
+<h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{% trans 'OUR PRODUCTS' %}</h1>
+<div class="all_categories">
+    {% for cat in categories %}
+        <p><a class="cat_href" href="{% url 'product:categories' cat.slug %}">
+            <span class="cat">
+                {{ cat.category }}
+            </span>
+        </a></p>
+    {% endfor%}
+</div>
+{% endblock %}    

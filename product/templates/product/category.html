@@ -1,0 +1,102 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}Shop{%endblock%}
+{% load i18n %}
+{% block content %}
+{% if products %}
+    <h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{{cat_name}}</h1>
+
+    <div class="categories_nav" style>
+		<button class="cat-nav-but chosen_cat_button" value="mens">{% trans 'Men' %}</button>
+		<button class="cat-nav-but" value="womens">{% trans 'Women' %}</button>
+		<button class="cat-nav-but" value="kids">{% trans 'Kids' %}</button>
+	</div>
+	<div class="cat-wrapper">
+				<div class="mens_products z-class1">
+					{% for item in products%}
+						{% if item.gender == 'man' %}
+							<div class="cat-item">
+								<a href="{% url 'product:product_detail' item.gender item.category.slug item.slug %}">
+									<div class="cat-image">
+										<img class="cat-image-img" src="{{ item.main_image.url }}" alt="ZXC">
+									</div>
+									<div class="cat-desc">
+										<span class="cat-title"> {{item.title}} </span>
+										
+										<div class="bookmark-box" data-id="{{item.id}}">
+											<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="red" class="bi bi-heart-fill bookmarks-hart-fill"  viewBox="0 0 16 16">
+	  												<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+											</svg>
+
+											<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#dd5145" class="bi bi-heart bookmarks-hart-empty" viewBox="0 0 16 16">
+						                          <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+						                        </svg>
+
+				                        </div>
+									</div>
+								</a>
+							</div>
+
+						{%endif%}
+					{% endfor %}
+				</div>
+
+				<div class="womens_products z-class0">
+					{% for item in products %}
+						{% if item.gender == 'woman' %}
+							<div class="cat-item">
+								<a href="{% url 'product:product_detail' item.gender item.category.slug item.slug %}">
+									<div class="cat-image">
+										<img class="cat-image-img" src="{{ item.main_image.url }}" alt="ZXC">
+									</div>
+									<div class="cat-desc">
+										<span class="cat-title"> {{item.title}} </span>
+										<img class="bookmarks" data-id="{{item.id}}" src="{% static 'bookmarks/img/heart-fill.svg' %}">
+									</div>
+								</a>
+							</div>
+
+						{%endif%}
+					{% endfor %}
+				</div>
+
+				<div class="kids_products z-class0">
+					{% for item in products%}
+						{% if item.gender == 'kid' %}
+							<div class="cat-item">
+								<a href="{% url 'product:product_detail' item.gender item.category.slug item.slug %}">
+									<div class="cat-image">
+										<img class="cat-image-img" src="{{ item.main_image.url }}" alt="ZXC">
+									</div>
+									<div class="cat-desc">
+										<span class="cat-title"> {{item.title}} </span>
+										<img class="bookmarks" data-id="{{item.id}}" src="{% static 'bookmarks/img/heart-fill.svg' %}">
+									</div>
+								</a>
+							</div>
+
+						{%endif%}
+					{% endfor %}
+				</div>
+
+	</div>
+
+{% else %}
+	
+	<div class="empty-page-logo">
+        <img src="/static/mainFront/img/empty.svg">
+    </div>
+
+    <div class="empty-page-title">{% trans 'Still no products in category' %} "{{cat_name}}"</div>
+
+{% endif %}
+<div style="text-align: center; margin-top: 10px; margin-bottom: 40px">
+		<a href="{% url 'product:shop' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'ALL CATEGORIES' %}
+			</div>
+		</a>
+	</div>
+
+{% endblock %}
+

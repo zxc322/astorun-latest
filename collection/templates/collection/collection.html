@@ -1,0 +1,60 @@
+
+{% extends 'mainFront/base.html' %}
+
+{% load static %}
+{% block title %}Collections{%endblock%}
+{% load i18n %}
+
+{% block content %}
+
+        <h1 style="text-align: center; margin-top: 100px;  font-size: 26px;">{% trans 'OUR COLLECTIONS' %} </h1>
+		<div class="collections_nav" style>
+			<button class="col-nav-but chosen_button" value="man">{% trans 'Men' %}</button>
+			<button class="col-nav-but" value="woman">{% trans 'Women' %}</button>
+			<button class="col-nav-but" value="kid">{% trans 'Kids' %}</button>
+		</div>
+		<div class="collections_wrapper">
+           
+			<div class="all_collections">
+
+				{% for col in collections %}
+				<div class="collection">
+					<a class="hrefs" href="{{ col.slug }}">
+						<img src="{{ col.image.url }}">
+						<span class="collection_name">{{ col.collection_name}}</span>
+					</a>
+				</div>
+
+				{% endfor %}
+
+
+            {% if page_obj.has_other_pages %}
+            <nav class="list_pages">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="nav-arrow"> < </a>
+                {% else %}
+                    <span class="nav-empty_arrow"> < </span>
+                {% endif %}
+                {% for p in paginator.page_range %}
+                {% if page_obj.number == p %}
+                    <span class="selected_page">{{ p }}</span>
+                {% else %}
+                        <a href="?page={{ p }}" class="page_num">{{ p }}</a>
+                {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="nav-arrow"> > </a>
+                {% else %}
+                    <span class="nav-empty_arrow"> > </span>
+                {% endif %}
+            </nav>
+            {% endif %}
+        
+			</div>
+
+
+    	</div>
+
+		 <script src="{% static 'collection/js/collection.js' %}"></script>
+
+{% endblock %}

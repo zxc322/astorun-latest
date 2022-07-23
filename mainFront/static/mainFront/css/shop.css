@@ -1,0 +1,56 @@
+.types_block{
+    text-align: center;
+    overflow: hidden;
+}
+
+.hats_block, .sweatshirts_block, .pants_block{
+    padding: 0 10px 15px 10px;
+    /*align-items: center;*/
+    background: #fff;
+    display: inline-block;
+    width: 20%;
+    height: 60%;
+    margin: 55px 7px;
+    transition-duration: .3s;
+}
+
+.hats_block:hover, .sweatshirts_block:hover, .pants_block:hover{
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+
+.types_block a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    /*transition-duration: .3s;*/
+    
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.type_img{
+    height: 340px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.hats_block img, .sweatshirts_block img, .pants_block img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width:100%;
+    max-height: 100%;
+}
+
+
+
+.types_block a:hover{
+    color: rgb(221, 81, 69);
+    text-decoration: none;
+}
+
+
+
+    
+

@@ -1,0 +1,148 @@
+.news-article{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.news-main-image{
+    max-width: 300px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+.news-main-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.news-titles{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 10px 0;
+}
+
+.news-title{
+    font-size: 20px;
+    
+    font-weight: 700;
+}
+
+.news-date{
+    color: #dd5145;
+    
+    font-weight: 500;
+}
+
+.news-text{
+    max-width: 550px;
+    overflow: hidden;
+}
+.more-news{
+    color: #dd5145;
+    font-weight: 700;
+    
+}
+
+.more-news:hover{
+    color: #dd5145;
+}
+
+.load-news{
+    padding: 0 20px;
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+    height: 51px;
+    border: 2px solid #dd5145;
+    color: #dd5145;
+    background: linear-gradient(to left, transparent 50%, #dd5145 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+    border-radius: 5px;
+}
+
+.load-news:hover{
+    background-position: left;
+    color: white;
+
+}
+
+.news-more-block{
+    max-width: 950px;
+    min-height: 600px;
+    margin: 30px auto;
+    padding: 40px 30px;
+}
+
+.news-slider-wrapper{
+    height: 300px;
+    width: 380px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    float: left;
+}
+
+.news-slider{
+    width: 300px;
+    overflow: hidden;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.news-nav-links{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-nav-links a{
+    color: #dd3c3c;
+    text-decoration: none;
+    font-size: 20px;
+    
+    font-weight: 700;
+}
+
+.news-nav-links a:hover{
+    text-decoration: underline;
+    color: #dd3c3c;
+}
+
+.news-full-text{
+    min-height: 350px;
+}
+
+.hide-news{
+    display: none;
+    opacity: 0;
+}
+
+.appear{
+    animation-name: appear;
+    animation-duration: 1s;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: translateY(300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*.test-div{
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 0;
+    flex-direction: column;
+    background-color: rgba(0,0,0,.8);
+
+}

@@ -1,0 +1,9 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}OFFER{%endblock%}
+
+{% block content%}
+<div class="DOCS-content">
+    {{ OFFER.text|linebreaks }}
+</div>
+{% endblock %}

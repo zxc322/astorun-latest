@@ -1,0 +1,18 @@
+ <form action="{% url 'bookmarks:add_to_bookmarks' %}" method="post">{% csrf_token %}
+                    <input type="hidden" name="id" value="{{i.id}}">
+                    <input type="hidden" name="url_from" value="{{request.path}}">
+                    <button type="submit" style="background: none; border:none; margin-left: 120px; margin-top: -20px">
+                        <svg  id="zxc" data-id="zxc" xmlns="http://www.w3.org/2000/svg" width="26" height="24" fill="#02520B" class="bi bi-heart-fill empty_hart" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                            </svg></button>
+                </form>
+                <form action="{% url 'bookmarks:remove_from_bookmarks' %}" method="post">{% csrf_token %}
+                    <input type="hidden" name="id" value="{{i.id}}">
+                    <input type="hidden" name="url_from" value="{{request.path}}">
+                    <button type="submit" style="background: none; border:none; margin-left: 120px; margin-top: -20px">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="24" fill="#02520B" class="bi bi-heart-fill full_hart" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                            </svg></button>
+                </form>
+
+ <div class="bookmarks" data-id={{i.id}}>

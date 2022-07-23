@@ -1,0 +1,42 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}order{%endblock%}
+{% load i18n %}
+{% block content%}
+<h1 style="text-align: center; margin-top: 90px;  font-size: 26px;"> {% trans 'MY ORDERS' %} </h1>
+
+<div class="completed-nav" style>
+		<button type="button" class="completed-nav-but1 chosen_completed_button" >{% trans 'as product' %}</button>
+		<button type="button" class="completed-nav-but2">{% trans 'as collection' %}</button>
+
+	</div>
+<div class="completed-orders-wrapper">
+    <div class="com-order-wrap z-class1 swipe-in">
+        {% for item in orders %}
+        <div class="completed_order">
+            <span>{% trans 'ORDER ID' %}: {{item.id}}</span><br>
+            <span>{% trans 'CREATED' %}: {{ item.created }}</span><br>
+            <span>{% trans 'ORDER PRICE' %}: {{ item.order_price }} {% trans 'UAH' %}</span><br>
+            <span>{% trans 'DELIVERY PRICE' %}: {{ item.delivery_price }} {% trans 'UAH' %}</span><br>
+            <span>{% trans 'ORDER STATUS' %}: {{ item.status }}</span>
+            <a href="{% url 'order:completed_detail' item.id %}"><button class="completed-button" type="submit">{% trans 'View details' %}</button> </a>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="com-c-order-wrap z-class0">
+        {% for item in col_orders %}
+        <div class="completed_c_order">
+            <span>{% trans 'ORDER ID' %}: {{item.id}}</span><br>
+            <span>{% trans 'CREATED' %}: {{ item.created }}</span><br>
+            <span>{% trans 'ORDER PRICE' %}: {{ item.order_price }} {% trans 'UAH' %}</span><br>
+            <span>{% trans 'DISCOUNT FOR THIS ORDER' %}: {{ item.discount_percent }}</span><br>
+            <span>{% trans 'ORDER STATUS' %}: {{ item.status }}</span>
+            <a href="{% url 'order:completed_col_detail' item.id %}"><button class="completed-button" type="submit">{% trans 'View details' %}</button> </a>
+            <hr>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

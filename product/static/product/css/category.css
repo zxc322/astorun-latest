@@ -1,0 +1,290 @@
+.mens_item, .womens_item, .kids_item{
+    width: 250px;
+    height: 300px;
+    border: 2px solid black;
+    background: #89A3A3;
+    margin: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.item_image-img{
+    position: absolute;
+    height : 75%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+a:hover{
+    color: white;
+}
+
+.item_link{
+    text-decoration: none;
+    font-size:16px;
+    color: black;
+}
+
+.item_title{
+    position: absolute;
+    margin-top: 90%;
+}
+
+.item_price{
+    position: absolute;
+    margin-top: 100%;
+    display: inline-block;
+}
+
+
+
+/*.bookmarks{
+    filter: invert(1);
+    cursor: pointer;
+    width: 27px;
+}*/
+
+.red-wrapper .bookmarks{
+    display: inline-block;
+}
+
+/*.empty_hart{
+    fill: black;
+    fill-border: 2px solid black;
+}*/
+
+
+.all_categories a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+.all_categories a:hover{
+    color: black;
+    /*background: #a89f9e;*/
+    transition: .2s;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.all_categories{
+    margin-top: 69px;
+    text-align: center;
+}
+.cat{
+    text-align: center;
+    top: 50%;
+    width: 200px;
+    height: 60px;
+
+}
+
+.cat_href{
+    font-size: 22px;
+    font-weight: 600;   
+    width: 210px;
+    height: 60px;
+    border: 3px solid #dd5145;
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+}
+
+.cat-nav-but{
+    font-size: 20px;
+    font-weight: 700;
+    
+    background: none;
+    color: #dd5145;
+    border: 1px solid #dd5145;
+    border-radius: 3px;
+    margin: 0 40px;
+    width: 150px;
+    height: 50px;
+}
+
+.categories_nav{
+    margin: 50px 0 40px 0;
+    text-align: center;
+}
+
+.chosen_cat_button{
+    background: #dd5145;
+    color: white
+}
+
+.z-class1{
+
+    z-index: 1;
+}
+
+.z-class0{
+    z-index: 0;
+    display: none;
+}
+
+.mens_products{
+    background-image: url(img/back.jpg);
+    position: relative;
+
+    /*display: flex;*/
+    width: 1100px;
+    flex-wrap: wrap;
+}
+
+.womens_products{
+    background-image: url(img/back.jpg);
+    position: relative;
+    width: 1100px;
+    margin-bottom: 40px;
+    /*margin-left: -1100px;*/
+    flex-wrap: wrap;
+}
+
+.kids_products{
+    background-image: url(img/back.jpg);
+    position: relative;
+    width: 1100px;
+    margin-bottom: 40px;
+    /*margin-left: -1100px;*/
+    flex-wrap: wrap;
+
+}
+.cat-wrapper{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cat-item {
+    display: inline-block;
+    margin: 31px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-top: 15px;
+    text-align: center;
+    transition: .2s;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.35);
+}
+
+.cat-item:hover{
+    box-shadow: 0 0 16px 5px rgb(0, 0, 0, 0.5)
+}
+
+.cat-image {
+    width: 300px;
+    height: 255px;
+}
+
+.cat-image-img{
+    width: 90%;
+    height: 98%;
+}
+
+.cat-desc{
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+}
+.cat-title{
+    font-size: 20px;
+    
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.cat-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.cat-item a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.swipe-out{
+    animation-name: swipe-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.swipe-in{
+    animation-name: swipe-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes swipe-out{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(500px);
+        opacity: 0;
+        display: flex;
+    }
+}
+
+@keyframes swipe-in{
+    0%{
+        transform: translateX(-500px);
+        opacity: 0;
+        display: block;
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
+.back-to-cats{
+    padding: 0 20px;
+    
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    height: 40px;
+    border: 2px solid #dd5145;
+    color: #dd5145;
+    margin: 15px;
+    display: inline-block;
+    padding-top: 5px;
+    background: linear-gradient(to left, transparent 50%, #dd5145 50%) right;
+    background-size: 200%;
+    transition: .3s ease-out;
+
+}
+
+.back-to-cats:hover{
+    background-position: left;
+    color: white;
+}
+
+
+.bookmark-box{
+    position: relative;
+    cursor: pointer;
+
+}
+
+.bookmarks-hart-fill{
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+.bookmarks-hart-empty{
+    position: absolute;
+    right: 0;
+}
+
+.bookmark-box.added .bookmarks-hart-fill{
+    display: initial;
+}

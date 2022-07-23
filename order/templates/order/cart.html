@@ -1,0 +1,134 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}Cart{%endblock%}
+{% load i18n %}
+{% block content%}
+{% if cart_items %}
+    <h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">{% trans 'YOUR PRODUCTS' %} </h1>
+
+    <form id="order_form" method="post" action="{% url 'order:make_order' %}"> {% csrf_token %}
+        <div class="cart-item-wrapper">
+
+             
+            {% for item in cart_items %}
+                <div class="cart_item">
+                    <div class="cart_product_img">
+                        <img src="{{item.product.main_image.url}}">
+                    </div>
+                    <div class="cart_item_fields">
+                        <label>{% trans 'Item name:' %}&nbsp </label>
+                            <a href="{% url 'product:product_detail' item.product.gender item.product.category.slug item.product.slug %}"
+                            class="cart-details-link"> {{ item.product.title }} </a><br>
+
+                        {% trans 'Item size'%}:  <span style="color: #dd5145; font-weight:500"> {{ item.size }}</span><br>
+                        {% trans 'Item color' %}:  <span style="color: #dd5145; font-weight:500"> {{ item.color }}</span><br>
+                        {% trans 'Item price' %}: <span style="color: #dd5145; font-weight:500" class="price_for_item" data-item_id="{{item.id}}">{{ item.price_per_item}} {% trans 'UAH' %}</span><br>
+                        {% trans 'Total price' %}: <span class="product_total_price" style="color: #dd5145; font-weight:500">{{ item.product_total_price }}</span>
+                        <span style="color: #dd5145; font-weight:500">   {% trans 'UAH' %}</span><br>
+                        <button class="basket-quantity__btn minus" type="button">
+                            <span class="fas fa-chevron-left"></span>
+                        </button>    
+                        <input value="{{ item.quantity }}" type="tel" min="1" class="product_quantity"
+                               name="product_in_cart_{{ item.id }}">
+                       <button class="basket-quantity__btn plus" type="button">
+                            <span class="fas fa-chevron-right"></span>
+                        </button> 
+                        <span class="item_id" style="display: none;">{{ item.id }}</span>
+                    </div>
+                    <button type="button" class="remove_product_button">X</button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="user-data-wrapper">
+            <div class="customer_data">
+
+                <div class="form1">
+                    <h4 style="margin-bottom: 20px">{% trans 'Order form' %}</h4>
+
+                    <input class="form1-group" name="customer_name" type="text" placeholder="{% trans 'name' %}" required><br>
+                    <input class="form1-group" name="customer_email" type="email" placeholder="emailExample@gmail.com" required><br>
+                    <input class="form1-group" data-tel-input name="customer_phone" maxlength="19" type="tel" placeholder="{% trans 'phone' %}" required><br><br>
+
+                    <div class="order_price">
+                    <div>{% trans 'Products price' %}: <span class="calculated_products_price" ></span>
+                    <span style="color: #dd5145; font-weight:500"> {% trans 'UAH' %}</span></div>
+                    <div>{% trans 'Delivery price' %}: <span class="delivery_price"></span>
+                        <span style="color: #dd5145; font-weight:500">{% trans 'UAH' %}</span></div>
+                    <div>{% trans 'Total order price' %}: <span class="calculated_order_price" ></span>
+                    <span style="color: #dd5145; font-weight:500"> {% trans 'UAH' %}</span> </div>
+
+                    </div><br><br>
+                    <label style="font-size: 18px; ">{% trans 'Delivery info' %}</label><br><br>
+                    <select name="delivery_region" class="delivery_region form1-group">
+                        <option value="VINNYTSKA OBL">Вiнницька область</option>
+                        <option value="VOLYNSKA OBL">Волинська область</option>
+                        <option value="DNIPROPETROVSKA OBL">Днiпропетровська область</option>
+                        <option value="DONETSKA OBL">Донецька область</option>
+                        <option value="JYTOMYRSKA OBL">Житомирська область</option>
+                        <option value="ZAKARPATSKA OBL">Закарпатська область</option>
+                        <option value="ZAPORIJSKA OBL">Запорiжська область</option>
+                        <option value="IVANO FRANKIVSKA OBL">Iвано-Франкiвська область</option>
+                        <option value="KYIVSKA OBL">Київська область</option>
+                        <option value="KIROVOGRADSKA OBL">Кiровоградська область</option>
+                        <option value="LUHANSKA OBL">Луганська область</option>
+                        <option value="LVIVSKA OBL">Львiвська область</option>
+                        <option value="MYKOLAIVSKA OBL">Миколаївська область</option>
+                        <option value="ODESKA OBL">Одеська область</option>
+                        <option value="POLTAVSKA OBL">Полтавська область</option>
+                        <option value="RIVNENSKA OBL">Рiвненська область</option>
+                        <option value="SUMSKA OBL">Сумська область</option>
+                        <option value="TERBOPILSKA OBL">Тернопiльська область</option>
+                        <option value="KHARKIVSKA OBL">Харкiвська область</option>
+                        <option value="KHERSONSKA OBL">Херсонська область</option>
+                        <option value="KHMELNYTSKA OBL">Хмельницька область</option>
+                        <option value="CHERKASKA OBL">Черкаська область</option>
+                        <option value="CHERNIHIVSKA OBL">Чернiгiвська область</option>
+                        <option value="CHERNIVETSKA OBL">Чернiвецька область</option>
+                    </select><br>
+
+                    <input class="form1-group" name="delivery_district" type="text" placeholder="{% trans 'district (optional)' %}"><br>
+                    <input class="form1-group" name="delivery_city" type="text" placeholder="{% trans 'city or town' %}" required><br>
+                    <input class="form1-group" name="nova_poshta" type="number" placeholder="{% trans 'nova poshta №' %}" min="1" required><br>
+                    <input class="form1-group" name="comment" type="textarea" size="60" placeholder="{% trans 'comment (optional)' %}"><br>
+                    <input type="hidden" name="url_from" value="{{request.path}}">
+                    <input class="hidden_total" type="hidden" name="hidden_total">
+                    <input class="hidden_delivery_price" type="hidden" name="delivery_price">
+                    <input type="checkbox" name="agreement" required id="agreement">
+                    <label for="agreement">I agree with everything</label>
+                    <div class="checkout-wrapper">
+                        <button  type="submit" class="form1-submit_button" >{% trans 'Checkout' %}</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    <script src="{% static 'mainFront/js/inputMask.js' %}"></script>
+{% else %}
+
+    <div class="empty-page-logo">
+        <img src="/static/mainFront/img/empty.svg">
+    </div>
+
+    <div class="empty-page-title"> {% trans 'YOUR CART IS EMPTY' %}</h3>
+
+    <div style="text-align: center; margin-bottom: 45px">
+		<a href="{% url 'product:shop' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'TO SHOP' %}
+			</div>
+		</a>
+
+        <a href="{% url 'collection:collection' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'TO COLLECTIONS' %}
+			</div>
+		</a>
+	</div>
+{% endif %}
+
+
+
+{% endblock %}

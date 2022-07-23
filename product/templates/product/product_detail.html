@@ -1,0 +1,100 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}Sweatshirts{%endblock%}
+{% load i18n %}
+{% block content%}
+
+
+<div class="detail_wrapper">
+{% for i in page_obj %}
+
+    <div style="margin-top: 100px; font-size: 35px; font-weight:bolder; text-align: center;"> {{ i.title }} </div>
+        <div class="image-box-wrapper">
+            <div class="image_box">
+                {% for image in images %}
+                    <div class="image-wrapper">
+                        <img src="{{ image.picture.url }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="product_details_box">
+
+
+
+            <form method="post" action="{% url 'order:add_to_cart' %}" id="size_choise" class="form-inline">
+                {% csrf_token %}
+
+                <div class="red-wrapper">
+                    
+                    <span class="single-price">
+                        {{i.price}} {% trans 'UAH' %}
+                    </span>
+
+                    <div class="bookmark-box" data-id="{{i.id}}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#dd5145" class="bi bi-heart-fill bookmarks-hart-fill"  viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                            </svg>
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#dd5145" class="bi bi-heart bookmarks-hart-empty" viewBox="0 0 16 16">
+                                                  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                                </svg>
+
+                                        </div>
+                </div>
+
+                <div class="select-fields-wrapper">
+                    <select form="size_choise" name="color" id="color" class="single-select-form">
+                        {% for c in colors %}
+                                <option value="{{c.color_name}}" typeof="color" class="single-option-form">{{c.color_name}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select form="size_choise" name="size" id="size" class="single-select-form">
+                        {% for s in size%}
+                                <option  value="{{s.size}}" class="single-option-form">{{s.size}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <button id="submit_button" class="single-button" type="submit"
+                        data-product_id="{{i.id}}"
+                        data-product_title="{{i.title}}"
+                        data-product_price="{{i.price}}"
+                        data-product_image="{{i.main_image}}">{% trans 'Buy' %}
+                    </button>
+                </div><br>
+
+
+
+            </form>
+
+             <div class="single-description">
+                <span>{{ i.description }}</span>
+
+            </div>
+
+        </div>
+
+    <div style="margin-bottom: 40px">
+        <div class="single-bot-link-wrapper">
+        {% if prev_slug != None %}
+            <a  style="text-decoration: none;" href="{% url 'product:product_detail' gender cat_slug prev_slug %}">
+                <div class="single-bot-link">{% trans 'Previous product' %}</div></a>
+        {% endif %}
+        {% if next_slug != None %}
+            <a style="text-decoration: none;" href="{% url 'product:product_detail' gender cat_slug next_slug %}">
+                <div class="single-bot-link">{% trans 'Next product' %}</div></a>
+        {% endif %}
+        </div>
+        <div class="single-bot-link-wrapper">
+            <a style="text-decoration: none;" href="{% url 'product:categories' i.category.slug %}"><div class="single-bot-link to-shop">{% trans 'To shop' %}</div></a>
+            {% if i.collection.slug %}
+                <a style="text-decoration: none;" href="{% url 'collection:slider_collection' i.collection.slug gender %}"><div class="single-bot-link to-shop">{% trans 'See in collection' %}</div></a>
+            {% endif %}
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

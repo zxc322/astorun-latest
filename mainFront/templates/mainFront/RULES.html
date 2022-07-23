@@ -1,0 +1,9 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}RULES{%endblock%}
+
+{% block content%}
+<div class="DOCS-content">
+    {{ RULES.text|linebreaks }}
+</div>
+{% endblock %}

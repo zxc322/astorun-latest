@@ -1,0 +1,238 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% block title %}Collections{%endblock%}
+{% load i18n %}
+{% block content %}
+{% if parsed_collection %}
+<h1 style="text-align: center; margin-top: 100px;  font-size: 26px;"> {{ col_name }} </h1>
+<form method="post" action="{% url 'collection:buy_collection' %}" style="padding: 10px;"> {% csrf_token %}
+<div class="col-wrapper">
+    <div class="col-top-wrapper">
+        <div class="top-slider">
+
+
+            {% for item in parsed_collection %}
+                {% if item.category.slug == 'hats' %}
+
+
+                    <div class="col-section-content">
+
+                        <div class="col-image">
+                            <div class="radio-wrap">
+                                <div class="radio">
+                                    <input class="top-slider-chek js" type="checkbox" id="{{item.id}}" name="{{item.price}}">
+
+                                    <label class="top-label" for="{{item.id}}"></label>
+                                </div>
+                            </div>
+                            <img src="{{item.main_image.url}}" alt="QWE">
+                        </div>
+
+                        <div class="hidden-form">
+                            <div class="form-item-desc">
+                                <span>{% trans 'Title' %}: {{item.title}}</span><br>
+                                <span>{% trans 'Price' %}: {{item.price}} {% trans 'UAH' %}</span><br>
+                                <span>{% trans 'Category' %}: {{item.category.category}}</span><br>
+                                <a href="{% url 'product:product_detail' gender item.category.slug item.slug %}">{% trans 'View details' %}</a>
+                            </div>
+                        <div class="select-hid-wrapper">
+                            <div class="select select-size">
+                                <div class="select__header select__header_size">
+                                    <span class="select__current_size">{% trans 'Size' %}</span>
+                                </div>
+                                <input type="hidden" class="chosen-size {{item.id}}" name="chosen-size" value="{{item.id}}=">
+                                <div class="select__body select__body_size">
+                                        {% for s in sizes %}
+                                            {% if s.product_id == item.id %}
+                                                <div class="select__item select__item_size">{{s.size}}</div>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                </div>
+                            </div>
+
+                            <div class="select color-select">
+                                <div class="select__header select__header_color">
+                                    <span class="select__current select__current_color">{% trans 'Color' %}</span>
+                                </div>
+                                <input type="hidden" class="chosen-color {{item.id}}" name="chosen-color" value="{{item.id}}=">
+                                <div class="select__body select__body_color">
+
+                                        {% for color in colors %}
+                                            {% if color.product_id == item.id %}
+                                                <div class="select__item select__item_color">{{color.color_name}}</div>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="col-mid-wrapper">
+        <div class="top-slider">
+
+
+            {% for item in parsed_collection %}
+                {% if item.category.slug == 'tshirts' or item.category.slug == 'sweatshirts' %}
+                    <div class="col-section-content">
+
+                        <div class="col-image">
+                            <div class="radio-wrap">
+                                <div class="radio">
+                                    <input class="mid-slider-chek js" type="checkbox" id="{{item.id}}" name="{{item.price}}">
+                                    <label class="mid-label" for="{{item.id}}"></label>
+                                </div>
+                            </div>
+                            <img src="{{item.main_image.url}}" alt="QWE">
+                        </div>
+
+                        <div class="hidden-form">
+                            <div class="form-item-desc">
+                                <span>{% trans 'Title' %}: {{item.title}}</span><br>
+                                <span>{% trans 'Price' %}: {{item.price}} {% trans 'UAH' %}</span><br>
+                                <span>{% trans 'Category' %}: {{item.category.category}}</span><br>
+                                <a href="{% url 'product:product_detail' gender item.category.slug item.slug %}">{% trans 'View details' %}</a>
+                            </div>
+                             <div class="select-hid-wrapper">
+                            <div class="select select-size">
+                                <div class="select__header select__header_size">
+                                    <span class="select__current_size">{% trans 'Size' %}</span>
+                                </div>
+                                <input type="hidden" class="chosen-size {{item.id}}" name="chosen-size" value="{{item.id}}=">
+                                <div class="select__body select__body_size">
+                                    {% for s in sizes %}
+                                        {% if s.product_id == item.id %}
+                                            <div class="select__item select__item_size">{{s.size}}</div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="select color-select">
+                                <div class="select__header select__header_color">
+                                    <span class="select__current select__current_color">{% trans 'Color' %}</span>
+                                </div>
+                                <input type="hidden" class="chosen-color {{item.id}}" name="chosen-color" value="{{item.id}}=">
+                                <div class="select__body select__body_color">
+                                        {% for color in colors %}
+                                            {% if color.product_id == item.id %}
+                                                <div class="select__item select__item_color">{{color.color_name}}</div>
+                                            {% endif %}
+                                        {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-bot-wrapper">
+        <div class="top-slider">
+
+
+            {% for item in parsed_collection %}
+                {% if item.category.slug == 'shorts' or item.category.slug == 'pants'  %}
+                    <div class="col-section-content">
+
+                        <div class="col-image">
+                            <div class="radio-wrap">
+                                <div class="radio">
+                                    <input class="bot-slider-chek js"  type="checkbox" id="{{item.id}}" name="{{item.price}}">
+
+                                    <label class="bot-label" for="{{item.id}}"></label>
+                                </div>
+                            </div>
+                            <img src="{{item.main_image.url}}" alt="QWE">
+                        </div>
+
+                        <div class="hidden-form">
+                            <div class="form-item-desc">
+                                <span>{% trans 'Title' %}: {{item.title}}</span><br>
+                                <span>{% trans 'Price' %}: {{item.price}} {% trans 'UAH' %}</span><br>
+                                <span>{% trans 'Category' %}: {{item.category.category}}</span><br>
+                                <a href="{% url 'product:product_detail' gender item.category.slug item.slug %}">{% trans 'View details' %}</a>
+                            </div>
+                            <div class="select-hid-wrapper">
+                            <div class="select select-size">
+                                <div class="select__header select__header_size">
+
+                                    <span class="select__current_size" data-item_id="{{item.id}}">{% trans 'Size' %}
+                                        <input type="hidden" class="for-size-id" value="{{item.id}}">
+                                    </span>
+                                </div>
+                                <input type="hidden" class="chosen-size {{item.id}}" name="chosen-size" value="{{item.id}}=">
+                                <div class="select__body select__body_size" >
+                                    {% for s in sizes %}
+                                            {% if s.product_id == item.id %}
+                                                <div class="select__item select__item_size">{{s.size}}</div>
+                                            {% endif %}
+                                        {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="select color-select">
+                                <div class="select__header select__header_color">
+                                    <span class="select__current select__current_color">{% trans 'Color' %}</span>
+                                </div>
+                                <input type="hidden" class="chosen-color {{item.id}}" name="chosen-color" value="{{item.id}}=">
+                                <div class="select__body select__body_color">
+                                    {% for color in colors %}
+                                            {% if color.product_id == item.id %}
+                                                <div class="select__item select__item_color">{{color.color_name}}</div>
+                                            {% endif %}
+                                        {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="discount-section">
+        <span>{% trans 'Chosen items' %} : <span class="chosen-items"></span></span><br>
+        <span>{% trans 'Discount' %} :<span class="discount-percent"></span></span><br>
+        <span>{% trans 'Items price with discount' %}: <span class="discount-price"></span> {% trans 'UAH' %} </span><br>
+
+            <input type="hidden" class="hidden-price" name="discount-price">
+            <input type="hidden" class="hidden-percent" name="discount-percent">
+            <input type="hidden" class="hidden-ids" name="discount-ids">
+            <input type="hidden" name="gender" value="{{gender}}">
+            <input type="hidden" name="url_from" value="{{request.path}}">
+            <p><button type="submit" class="col-buy-button">{% trans 'Make order' %}</button></p>
+
+
+    </div>
+</div>
+</form>
+{% else %}
+
+<div class="empty-page-logo">
+        <img src="/static/mainFront/img/empty.svg">
+    </div>
+
+<div class="empty-page-title"> {% trans 'No products in collection' %} "{{ col_name }}" :( </div>
+    <div style="text-align: center; margin-bottom: 45px">
+		<a href="{% url 'collection:collection' %}" class="back-to-cats-a">
+			<div class="back-to-cats">
+				{% trans 'GO BACK' %}
+			</div>
+		</a>
+	</div>
+{% endif %}
+<link rel="stylesheet" href="{% static 'collection/css/sizes.css' %}">
+<script src="{% static 'collection/js/sizes.js' %}"></script>
+
+{% endblock %}

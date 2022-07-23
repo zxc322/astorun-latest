@@ -1,0 +1,17 @@
+{% extends 'mainFront/base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}astorun{%endblock%}
+
+{% block content%}
+
+<div class="empty-page-logo">
+        <img src="/static/mainFront/img/empty.svg">
+    </div>
+
+<div class="empty-page-title">Error404</div>
+
+<div class="empty-page-title">
+    {% trans 'The page you are looking for does not exist' %} :(
+</div>
+{% endblock %}
