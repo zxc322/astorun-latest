@@ -10,5 +10,6 @@ $ docker-compose up -d --build
 
 миграции:
 $ docker-compose exec web python manage.py migrate
+
 создать админа:
 $ docker-compose exec web python manage.py createsuperuser
