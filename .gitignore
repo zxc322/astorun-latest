@@ -1,9 +1,10 @@
 commands.txt
+prod_settings.py
 *.pyc  
 *~  
 __pycache__  
 myvenv  
 db.sqlite3  
-/static
-/media
+static
+media
 .DS_Store  
