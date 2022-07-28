@@ -100,7 +100,7 @@ def make_order2(request):
         # Code for telegram notification
 
         telegram_bot_send_order_text(order=order, products=ProductInOrder.objects.filter(order_id=order.id).select_related('product'))
-        send_email(order, '{}/order/completed_detail/{}'.format(request.get_host(), order.id))
+        print(send_email(order, '{}/order/completed_detail/{}'.format(request.get_host(), order.id)))
         redirect_url = data.get('url_from')
         return redirect('{}completed_detail/{}'.format(redirect_url[:-5], order.id))
     return HttpResponse(request.POST)

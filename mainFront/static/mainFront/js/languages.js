@@ -21,10 +21,12 @@ if (current_href.indexOf('/uk/') > 1){
 
 
 // Code for cart svg scale
+
 if (document.getElementById('basket_counter_header')){
 
     document.getElementById('basket_counter_header').addEventListener('mouseenter', e =>
         document.getElementById('cart-hart').classList.add('scale')
+
     )
 
     document.getElementById('basket_counter_header').addEventListener('mouseleave', e =>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-20 13:57+0300\n"
+"POT-Creation-Date: 2022-07-28 16:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: FrontendPractice/settings.py:143
+#: FrontendPractice/settings.py:96 FrontendPractice/settings1.py:99
 msgid "English"
 msgstr ""
 
-#: FrontendPractice/settings.py:144
+#: FrontendPractice/settings.py:97 FrontendPractice/settings1.py:100
 msgid "Russian"
 msgstr "Русский"
 
-#: FrontendPractice/settings.py:145
+#: FrontendPractice/settings.py:98 FrontendPractice/settings1.py:101
 msgid "Ukrainian"
 msgstr "Украинский"
 
@@ -74,12 +74,12 @@ msgid "YOUR BOOKMARKS LIST IS EMPTY"
 msgstr "НЕТ ТОВАРОВ В ИЗБРАННОМ"
 
 #: bookmarks/templates/bookmarks/bookmarks.html:56
-#: order/templates/order/cart.html:120
+#: order/templates/order/cart.html:122
 msgid "TO SHOP"
 msgstr "В МАГАЗИН"
 
 #: bookmarks/templates/bookmarks/bookmarks.html:62
-#: order/templates/order/cart.html:126
+#: order/templates/order/cart.html:128
 msgid "TO COLLECTIONS"
 msgstr "К КОЛЛЕКЦИЯМ"
 
@@ -162,12 +162,17 @@ msgstr "отделение новой почты"
 msgid "comment (optional)"
 msgstr "комментарий (не обязательно)"
 
-#: collection/templates/collection/buy_collection.html:92
-#: order/templates/order/cart.html:100
+#: collection/templates/collection/buy_collection.html:85
+#: order/templates/order/cart.html:99
+msgid "I agree with data processing rules"
+msgstr "Я соглашаюсь с правилами обработки данных"
+
+#: collection/templates/collection/buy_collection.html:94
+#: order/templates/order/cart.html:102
 msgid "Checkout"
 msgstr "Оформить"
 
-#: collection/templates/collection/buy_collection.html:100
+#: collection/templates/collection/buy_collection.html:102
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -278,75 +283,83 @@ msgstr "Введите ваше сообщение"
 msgid "Send"
 msgstr "Отправить"
 
-#: mainFront/templates/mainFront/base.html:90
+#: contacts/templates/contacts/done.html:10
+msgid "Your message was successfully delivered"
+msgstr "Ваше сообщение доставоено"
+
+#: contacts/templates/contacts/done.html:13
+msgid "Home"
+msgstr "Главная"
+
+#: mainFront/templates/mainFront/base.html:91
 #: mainFront/templates/mainFront/main.html:39
 msgid "SHOP"
 msgstr "МАГАЗИН"
 
-#: mainFront/templates/mainFront/base.html:91
+#: mainFront/templates/mainFront/base.html:92
 #: mainFront/templates/mainFront/main.html:40
 msgid "COLLECTIONS"
 msgstr "КОЛЛЕКЦИИ"
 
-#: mainFront/templates/mainFront/base.html:92
+#: mainFront/templates/mainFront/base.html:93
 #: mainFront/templates/mainFront/main.html:41
 msgid "NEWS"
 msgstr "НОВОСТИ"
 
-#: mainFront/templates/mainFront/base.html:93
+#: mainFront/templates/mainFront/base.html:94
 #: mainFront/templates/mainFront/main.html:42
 msgid "CONTACTS"
 msgstr "КОНТАКТИ"
 
-#: mainFront/templates/mainFront/base.html:119
+#: mainFront/templates/mainFront/base.html:120
 msgid "Shop"
 msgstr "Магазин"
 
-#: mainFront/templates/mainFront/base.html:122
+#: mainFront/templates/mainFront/base.html:123
 msgid "Collections"
 msgstr "Коллекции"
 
-#: mainFront/templates/mainFront/base.html:125
+#: mainFront/templates/mainFront/base.html:126
 msgid "News"
 msgstr "Новости"
 
-#: mainFront/templates/mainFront/base.html:128
+#: mainFront/templates/mainFront/base.html:129
 msgid "Contacts"
 msgstr "Контакты"
 
-#: mainFront/templates/mainFront/base.html:191
+#: mainFront/templates/mainFront/base.html:192
 msgid "Product was successfully added to the cart"
 msgstr "Продукт успешно добавлен в корзину"
 
-#: mainFront/templates/mainFront/base.html:192
+#: mainFront/templates/mainFront/base.html:193
 msgid "Make order more than 999 UAH and don't pay for delivery"
 msgstr "Сделайте заказ не меньше чем на 999 ГРН и не платите за доставку"
 
-#: mainFront/templates/mainFront/base.html:194
+#: mainFront/templates/mainFront/base.html:195
 msgid "Go to cart"
 msgstr "В корзину"
 
-#: mainFront/templates/mainFront/base.html:202
+#: mainFront/templates/mainFront/base.html:203
 msgid "Delete item from the cart"
 msgstr "Удалить товар с корзины"
 
-#: mainFront/templates/mainFront/base.html:205
+#: mainFront/templates/mainFront/base.html:206
 msgid "YES"
 msgstr "ДА"
 
-#: mainFront/templates/mainFront/base.html:209
+#: mainFront/templates/mainFront/base.html:210
 msgid "NO"
 msgstr "НЕТ"
 
-#: mainFront/templates/mainFront/base.html:217
+#: mainFront/templates/mainFront/base.html:218
 msgid "RULES"
 msgstr "ПРАВИЛА"
 
-#: mainFront/templates/mainFront/base.html:218
+#: mainFront/templates/mainFront/base.html:219
 msgid "OFFER"
 msgstr "ОФЕРТА"
 
-#: mainFront/templates/mainFront/base.html:219
+#: mainFront/templates/mainFront/base.html:220
 msgid "DELIVERY"
 msgstr "ДОСТАВКА"
 
@@ -366,15 +379,15 @@ msgstr "Предыдущая"
 msgid "Next"
 msgstr "Следующая"
 
-#: news/templates/news/news.html:8
+#: news/templates/news/news.html:6
 msgid "LATEST NEWS"
 msgstr "ПОСЛЕДНИЕ НОВОСТИ"
 
-#: news/templates/news/news.html:31
+#: news/templates/news/news.html:29
 msgid "more"
 msgstr "детальнее"
 
-#: news/templates/news/news.html:32
+#: news/templates/news/news.html:30
 msgid "LOAD NEWS"
 msgstr "СЛЕДУЮЩАЯ НОВОСТЬ"
 
@@ -414,7 +427,7 @@ msgstr "Цена за доставку"
 msgid "Total order price"
 msgstr "Общая стоимость"
 
-#: order/templates/order/cart.html:115
+#: order/templates/order/cart.html:117
 msgid "YOUR CART IS EMPTY"
 msgstr "НЕТ ТОВАРОВ В КОРЗИНЕ"
 
@@ -480,11 +493,11 @@ msgstr "В магазин"
 msgid "All my orders"
 msgstr "Мои заказы"
 
-#: product/templates/product/category.html:85
+#: product/templates/product/category.html:90
 msgid "Still no products in category"
 msgstr "Пока нет товаров в коллекции"
 
-#: product/templates/product/category.html:90
+#: product/templates/product/category.html:96
 msgid "ALL CATEGORIES"
 msgstr "ВСЕ КАТЕГОРИИ"
 

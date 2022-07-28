@@ -1,10 +1,14 @@
 import requests
+import os
+
+
+#bot_token='5367418874:AAF3q6zKABDCgZFR-P0cSFTnV_pL3cUMDEs'
+#bot_chatID='-598083342'
+bot_token = os.environ.get('BOT_TOKEN')
+bot_chatID = os.environ.get('CHAT_ID')
 
 
 def telegram_bot_send_order_text(order, products):
-    bot_token = '5367418874:AAF3q6zKABDCgZFR-P0cSFTnV_pL3cUMDEs'
-    bot_chatID = '-598083342'
-
     order_id = str(order.id)
     user_name = str(order.customer_name)
     user_email = str(order.customer_email)
@@ -55,9 +59,6 @@ def telegram_bot_send_order_text(order, products):
 
 
 def telegram_bot_send_col_order_text(order, products):
-    bot_token = '5367418874:AAF3q6zKABDCgZFR-P0cSFTnV_pL3cUMDEs'
-    bot_chatID = '-598083342'
-
     order_id = str(order.id)
     user_name = str(order.customer_name)
     user_email = str(order.customer_email)
@@ -109,10 +110,6 @@ def telegram_bot_send_col_order_text(order, products):
 
 
 def contact_us(data):
-
-    bot_token = '5367418874:AAF3q6zKABDCgZFR-P0cSFTnV_pL3cUMDEs'
-    bot_chatID = '-598083342'
-
     bot_message = 'New massage from "CONTACTS"' + '\n\n'
     bot_message += 'From: ' + data['customer_name'] + '\n'
     bot_message += 'User email: ' + data['customer_email'] + '\n\n'

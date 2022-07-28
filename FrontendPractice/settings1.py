@@ -5,6 +5,11 @@ from django.utils.translation import gettext_lazy as _
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG=bool(int(os.environ.get('DEBUG', default=1)))
+
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
 
 # Application definition
 
@@ -113,6 +118,7 @@ SESSION_COOKIE_AGE = 99999999999
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 
@@ -140,7 +146,19 @@ CACHES = {
     }
 }
 
-try:
-    from .dev_settings import *
-except ImportError:
-    from .prod_settings import *
+# Database settings
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get("POSTGRES_DB", 'postgres'),
+        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'), 
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT':  os.environ.get('DB_PORT', 5432), 
+    }
+}
+
+# if DEBUG == False:
+#     STATIC_URL = '/staticfiles/'
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

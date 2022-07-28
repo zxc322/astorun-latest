@@ -80,8 +80,10 @@
                         <input class="form1-group" name="delivery_city" type="text" placeholder="{% trans 'city or town' %}" required><br>
                         <input class="form1-group" name="nova_poshta" type="number" placeholder="{% trans 'nova poshta №' %}" min="1" required><br>
                         <input class="form1-group" name="comment" type="textarea" size="60" placeholder="{% trans 'comment (optional)' %}"><br>
-                        <input type="checkbox" name="agreement" required id="agreement">
-                        <label for="agreement">I agree with everything</label><br><br>
+                        <div class="checkbox">
+                            <input class="checkbox__input" type="checkbox" name="agreement" required id="agreement">
+                            <label class="checkbox__label" for="agreement">{% trans 'I agree with data processing rules' %}</label>
+                        </div>
                         <input type="hidden" name="url_from" value="{{request.path}}">
                         <input  type="hidden" name="order-price" value="{{order_price}}">
                         <input  type="hidden" name="discount-percent" value="{{discount}}">

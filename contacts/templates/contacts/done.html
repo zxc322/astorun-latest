@@ -1,14 +1,17 @@
 {% extends 'mainFront/base.html' %}
 {% load static %}
 {% block title %}contacts{%endblock%}
-
+{% load i18n %}
 {% block content%}
 <h1 style="text-align: center; margin-top: 90px;  font-size: 26px;">MESSAGE RECEIVED</h1>
 
-<div class="received-message">
-    <h4 style=" margin-top: 40px">Your message was successfully delivered</h4>
-    <div class="received-links">
-        <a class="home-link" href="{% url 'product:shop' %}"><button type="button" class="home-link-but">Home</button></a>
+<div class="received-message-wrapper">
+    <div class="received-message">
+        <h4 style=" margin-top: 40px">{% trans 'Your message was successfully delivered' %}</h4>
+
+        <div class="received-links">
+            <a class="home-link" href="{% url 'product:shop' %}"><button type="button" class="home-link-but">{% trans 'Home' %}</button></a>
+        </div>
     </div>
 </div>
 

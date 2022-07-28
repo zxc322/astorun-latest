@@ -135,6 +135,8 @@
 
     .cart_item_fields{
         margin: auto;
+        width: auto;
+        max-width: 300px;
     }
 
     .remove_product_button {
@@ -965,4 +967,25 @@
     .DOCS-content {
         padding: 140px 20px 40px;
     }
+}
+
+/* checkouts */
+
+@media (max-width: 360px){
+    .checkbox__label:before, .checkbox__label:after, .checkbox__input {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* contacreceived message page */
+
+@media (max-width: 360px){
+    .home-link-but {
+        width: 80%;
+    }
+    
+    .received-message{
+        height: auto;
+    }   
 }

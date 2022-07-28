@@ -94,8 +94,10 @@
                     <input type="hidden" name="url_from" value="{{request.path}}">
                     <input class="hidden_total" type="hidden" name="hidden_total">
                     <input class="hidden_delivery_price" type="hidden" name="delivery_price">
-                    <input type="checkbox" name="agreement" required id="agreement">
-                    <label for="agreement">I agree with everything</label>
+                    <div class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="agreement" required id="agreement">
+                        <label class="checkbox__label" for="agreement">{% trans 'I agree with data processing rules' %}</label>
+                    </div>
                     <div class="checkout-wrapper">
                         <button  type="submit" class="form1-submit_button" >{% trans 'Checkout' %}</button>
                     </div>
