@@ -3,6 +3,10 @@
 
     $ apt update && apt upgrade
  
- ### next step
+###### Rnning as root is bad practice. Let's create a user for further work
 
+    $ sudo adduser astorun 
+    $ sudo usermod -aG sudo astorun
+    $ groups astorun
+    $ su astorun
 
