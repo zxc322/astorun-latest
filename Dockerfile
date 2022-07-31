@@ -44,7 +44,7 @@ RUN chown -R astoruner:astorun $APP_HOME
 USER astoruner
 
 
-
+RUN ["chmod", "+x", "/home/app/astorun_2022/entrypoint.sh"]
 ENTRYPOINT ["/home/app/astorun_2022/entrypoint.sh"]
 
 

@@ -158,7 +158,3 @@ DATABASES = {
         'PORT':  os.environ.get('DB_PORT', 5432), 
     }
 }
-
-# if DEBUG == False:
-#     STATIC_URL = '/staticfiles/'
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

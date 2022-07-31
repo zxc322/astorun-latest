@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Karla', sans-serif;
+    font-family: 'Cuprum', sans-serif;
 }
 
 .main-page{
@@ -36,10 +36,10 @@
 .main-nav-section{
     color: #fff;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 24px;
     font-style: oblique;
     letter-spacing: 3px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: center;
     margin-top: 65px;
-    font-size: 25px;
+    font-size: 24px;
     font-style: oblique;
     letter-spacing: 2px;
     font-weight: 500;
@@ -72,7 +72,7 @@
     font-weight: 600;
     background: none;
     transition: .1s;
-    margin: 0 8px;
+    margin: 0 7px;
 }
 
 .chosen-lang{
