@@ -1,9 +1,6 @@
 import requests
 import os
 
-
-#bot_token='5367418874:AAF3q6zKABDCgZFR-P0cSFTnV_pL3cUMDEs'
-#bot_chatID='-598083342'
 bot_token = os.environ.get('BOT_TOKEN')
 bot_chatID = os.environ.get('CHAT_ID')
 
