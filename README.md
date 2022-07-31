@@ -85,15 +85,23 @@ We can clone project here from github and make directorys for static files direc
 
     $ cd /etc/supervisor/conf.d
     $ sudo ln /home/zxc/astorun_2022/config/astorun.conf
-    $ ls
-
->Output mast be like
-
-    astorun.conf
-    
+    ***
     $ sudo update-rc.d supervisor enable
     $ sudo service supervisor start
     $ sudo supervisorctl reread
+>If output
+
+    astorun: available
+>Do next
+
+    $ sudo supervisorctl update
+    $ sudo supervisorctl status
+
+###### If output is
+
+    astorun: RUNNING
+
+###### Congratulation, our site is working!
 
     
 
