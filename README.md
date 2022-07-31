@@ -88,6 +88,7 @@ We can clone project here from github and make directorys for static files direc
     $ ls
 
 >Output mast be like
+
     astorun.conf
     
     $ sudo update-rc.d supervisor enable
