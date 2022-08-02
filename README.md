@@ -1,5 +1,5 @@
 
-# Ubuntu clean server manual
+# Deploying manual (Ubuntu clean server)
 
     $ apt update && apt upgrade
  
