@@ -32,7 +32,7 @@
     $ cd && source venv/bin/activate
     
 ###### And we are inside of virtual environment
-We can clone project here from github and make directorys for static files directly and install all dependencies
+We can clone project here from github, make directorys for static files directly and install all dependencies
 
     $ git clone https://...
     $ sudo chown -R $USER:$USER astorun_2022
