@@ -18,12 +18,12 @@
 
     $ sudo -u postgres psql
     $ CREATE DATABASE astorun;
-    CREATE USER the_astoruner WITH PASSWORD 'astorun';
-    ALTER ROLE the_astoruner SET client_encoding TO 'utf8';
-    ALTER ROLE the_astoruner SET default_transaction_isolation TO 'read committed';
-    ALTER ROLE the_astoruner SET timezone TO 'UTC';
-    GRANT ALL PRIVILEGES ON DATABASE astorun TO the_astoruner;
-    \q
+    $ CREATE USER the_astoruner WITH PASSWORD 'astorun';
+    $ ALTER ROLE the_astoruner SET client_encoding TO 'utf8';
+    $ ALTER ROLE the_astoruner SET default_transaction_isolation TO 'read committed';
+    $ ALTER ROLE the_astoruner SET timezone TO 'UTC';
+    $ GRANT ALL PRIVILEGES ON DATABASE astorun TO the_astoruner;
+    $ \q
     
 ###### And thats it for DB. Now let's make a virtual environment for our site
 
