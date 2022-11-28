@@ -78,7 +78,7 @@ We can clone project here from github, make directorys for static files directly
 
     $ snap install core
     $ snap install --classic certbot
-    $ ln -s /snap/bin/certbot /usr/bin/certbot
+    $ /snap/bin/certbot certonly --nginx
     $ sudo systemctl restart nginx
     
 ###### And at last we need to enable supervisor

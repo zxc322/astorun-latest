@@ -5,6 +5,7 @@ bot_token = os.environ.get('BOT_TOKEN')
 bot_chatID = os.environ.get('CHAT_ID')
 
 
+
 def telegram_bot_send_order_text(order, products):
     order_id = str(order.id)
     user_name = str(order.customer_name)
