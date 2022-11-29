@@ -1,20 +1,25 @@
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
+
+load_dotenv()
+
+hosts = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
+print(hosts)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'dsasdSDASEQ3E1231'
 
-DEBUG=bool(int(os.environ.get('DEBUG', default=1)))
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
-    'colorfield',
     'modeltranslation',
     'contacts',
     'news',
@@ -23,6 +28,7 @@ INSTALLED_APPS = [
     'collection',
     'product',
     'mainFront',
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,8 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'FrontendPractice.wsgi.application'
 
-
-  
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -83,7 +87,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -120,8 +123,6 @@ SESSION_COOKIE_AGE = 99999999999
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-
-
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -131,30 +132,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 INTERNAL_IPS = [
 
     '127.0.0.1',
 ]
 
-# cache settings
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': os.path.join(BASE_DIR, 'cache'),
-    }
-}
 
 # Database settings
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("POSTGRES_DB", 'postgres'),
-        'USER': os.environ.get('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'postgres'), 
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT':  os.environ.get('DB_PORT', 5432), 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# if DEBUG == False:
+#     STATIC_URL = '/staticfiles/'
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

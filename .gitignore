@@ -2,10 +2,11 @@ commands.txt
 prod_settings.py
 *.pyc  
 *~  
-__pycache__  
-myvenv  
+__pycache__    
 db.sqlite3 
-.DS_Store
-.env.prod
+.env
 static
 media
+venv
+.venv
+astorun_deploy.txt

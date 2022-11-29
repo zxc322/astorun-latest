@@ -12,7 +12,7 @@
 
 
             {% for item in parsed_collection %}
-                {% if item.category.slug == 'hats' %}
+                {% if item.category.slug == 'hats' or item.category.slug == 'jewellery' %}
 
 
                     <div class="col-section-content">
@@ -80,7 +80,7 @@
 
 
             {% for item in parsed_collection %}
-                {% if item.category.slug == 'tshirts' or item.category.slug == 'sweatshirts' %}
+                {% if item.category.slug == 'tshirts' or item.category.slug == 'sweatshirts' or item.category.slug == 'shirts' or item.category.slug == 'outerwear' or item.category.slug == 'underwear' or item.category.slug == 'accessories' %}
                     <div class="col-section-content">
 
                         <div class="col-image">
@@ -141,7 +141,7 @@
 
 
             {% for item in parsed_collection %}
-                {% if item.category.slug == 'shorts' or item.category.slug == 'pants'  %}
+                {% if item.category.slug == 'shorts' or item.category.slug == 'trousers' or item.category.slug == 'socks' or item.category.slug == 'footwear'  %}
                     <div class="col-section-content">
 
                         <div class="col-image">

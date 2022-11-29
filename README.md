@@ -30,6 +30,8 @@
     $ sudo apt-get install python3-venv
     $ python3 -m venv venv
     $ cd && source venv/bin/activate
+
+    ### install poetry instead
     
 ###### And we are inside of virtual environment
 We can clone project here from github, make directorys for static files directly and install all dependencies
@@ -37,22 +39,30 @@ We can clone project here from github, make directorys for static files directly
     $ git clone https://...
     $ sudo chown -R $USER:$USER astorun_2022
     $ cd astorun_2022
+
+    $ poetry shell
+    $ poetry install
     $ mkdir media
     $ mkdir static
-    $ pip install -r req.txt
+    
     
 ###### Now we have everything to create our tables in database and create an administrator
 
     $ cd astorun_2022
-    $ python3 manage.py makemigration
-    $ python3 manage.py migrate
-    $ python3 manage.py collectstatic
-    $ python3 manage.py createsuperuser
+    $ poetry run python manage.py makemigration
+    $ poetry run python manage.py migrate
+
+###### create basic data (statuses, categories, docs)    
+    $ poetry run python manage.py create_basic
+    $ poetry run python collectstatic
+    $ poetry run python createsuperuser
     
 ###### Nginx settings (we can copy settings files from our project)
 
     $ cp /home/zxc/astorun_2022/nginx/astorun.conf /etc/nginx/sites-available/
     $ ln -s /etc/nginx/sites-available/astorun.conf /etc/nginx/sites-enabled/
+
+    ###### also look at /astorun_2022/nginx/nginx.conf (make changes what you need in /etc/nginx/nginx.conf)
     
 ###### SSL certificate for https requests
 
@@ -78,7 +88,8 @@ We can clone project here from github, make directorys for static files directly
 
     $ snap install core
     $ snap install --classic certbot
-    $ /snap/bin/certbot certonly --nginx
+    $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    $ certbot certonly --nginx
     $ sudo systemctl restart nginx
     
 ###### And at last we need to enable supervisor

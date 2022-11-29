@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "astorun-2022"
+version = "1.0.0"
+description = "zxc"
+authors = ["zxc_322 <kvasoliaeww@gmail.com>"]
+readme = "README.md"
+packages = [{include = "astorun_2022"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "3.2.9"
+autopep8 = "1.6.0"
+django-filter = "2.4.0"
+django-modeltranslation = "0.18.2"
+fontawesomefree = "6.1.1"
+psycopg2-binary = "^2.9.5"
+Pillow = "^9.3.0"
+pyTelegramBotAPI = "4.6.0"
+Jinja2 = "3.1.2"
+gunicorn = "20.1.0"
+django-libs = "2.0.3"
+django-extensions = "^3.2.1"
+python-dotenv = "^0.21.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

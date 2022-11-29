@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-28 16:28+0300\n"
+"POT-Creation-Date: 2022-11-29 20:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,15 +21,15 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: FrontendPractice/settings.py:96 FrontendPractice/settings1.py:99
+#: FrontendPractice/settings.py:95 FrontendPractice/settings3.py:99
 msgid "English"
 msgstr ""
 
-#: FrontendPractice/settings.py:97 FrontendPractice/settings1.py:100
+#: FrontendPractice/settings.py:96 FrontendPractice/settings3.py:100
 msgid "Russian"
 msgstr "Російська"
 
-#: FrontendPractice/settings.py:98 FrontendPractice/settings1.py:101
+#: FrontendPractice/settings.py:97 FrontendPractice/settings3.py:101
 msgid "Ukrainian"
 msgstr "Українська"
 
@@ -292,77 +292,81 @@ msgstr "Ваше повiдомлення було доставлено"
 msgid "Home"
 msgstr "Головна"
 
-#: mainFront/templates/mainFront/base.html:91
-#: mainFront/templates/mainFront/main.html:39
+#: mainFront/templates/mainFront/base.html:95
+#: mainFront/templates/mainFront/main.html:43
 msgid "SHOP"
 msgstr "МАГАЗИН"
 
-#: mainFront/templates/mainFront/base.html:92
-#: mainFront/templates/mainFront/main.html:40
+#: mainFront/templates/mainFront/base.html:96
+#: mainFront/templates/mainFront/main.html:44
 msgid "COLLECTIONS"
 msgstr "КОЛЕКЦІЇ"
 
-#: mainFront/templates/mainFront/base.html:93
-#: mainFront/templates/mainFront/main.html:41
+#: mainFront/templates/mainFront/base.html:97
+#: mainFront/templates/mainFront/main.html:45
 msgid "NEWS"
 msgstr "НОВИНИ"
 
-#: mainFront/templates/mainFront/base.html:94
-#: mainFront/templates/mainFront/main.html:42
+#: mainFront/templates/mainFront/base.html:98
+#: mainFront/templates/mainFront/main.html:46
 msgid "CONTACTS"
 msgstr "КОНТАКТИ"
 
-#: mainFront/templates/mainFront/base.html:120
+#: mainFront/templates/mainFront/base.html:124
 msgid "Shop"
 msgstr "Магазин"
 
-#: mainFront/templates/mainFront/base.html:123
+#: mainFront/templates/mainFront/base.html:127
 msgid "Collections"
 msgstr "Колекції"
 
-#: mainFront/templates/mainFront/base.html:126
+#: mainFront/templates/mainFront/base.html:130
 msgid "News"
 msgstr "Новини"
 
-#: mainFront/templates/mainFront/base.html:129
+#: mainFront/templates/mainFront/base.html:133
 msgid "Contacts"
 msgstr "Контакти"
 
-#: mainFront/templates/mainFront/base.html:192
+#: mainFront/templates/mainFront/base.html:196
 msgid "Product was successfully added to the cart"
 msgstr "Продукт успiшно додано до кошика"
 
-#: mainFront/templates/mainFront/base.html:193
+#: mainFront/templates/mainFront/base.html:197
 msgid "Make order more than 999 UAH and don't pay for delivery"
 msgstr "Робіть замовлення більше як на 999 ГРН та не платіть за доставку"
 
-#: mainFront/templates/mainFront/base.html:195
+#: mainFront/templates/mainFront/base.html:199
 msgid "Go to cart"
 msgstr "До кошика"
 
-#: mainFront/templates/mainFront/base.html:203
+#: mainFront/templates/mainFront/base.html:207
 msgid "Delete item from the cart"
 msgstr "Видалити товар з кошика"
 
-#: mainFront/templates/mainFront/base.html:206
+#: mainFront/templates/mainFront/base.html:210
 msgid "YES"
 msgstr "ТАК"
 
-#: mainFront/templates/mainFront/base.html:210
+#: mainFront/templates/mainFront/base.html:214
 msgid "NO"
 msgstr "НІ"
 
-#: mainFront/templates/mainFront/base.html:218
+#: mainFront/templates/mainFront/base.html:222
 msgid "RULES"
 msgstr "ПРАВИЛА"
 
-#: mainFront/templates/mainFront/base.html:219
+#: mainFront/templates/mainFront/base.html:223
 msgid "OFFER"
 msgstr "ОФЕРТА"
 
-#: mainFront/templates/mainFront/base.html:220
+#: mainFront/templates/mainFront/base.html:224
 msgid "DELIVERY"
 msgstr "ДОСТАВКA"
+
+#: mainFront/templates/mainFront/base.html:225
+msgid "ABOUT US"
+msgstr "ПРО НАС"
 
 #: mainFront/templates/mainFront/page404.html:15
 msgid "The page you are looking for does not exist"

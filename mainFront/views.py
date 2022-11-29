@@ -24,3 +24,7 @@ def OFFER(request):
 
 def DELIVERY(request):
 	return render(request, 'mainFront/DELIVERY.html', {'DELIVERY': Documentation.objects.get(slug='delivery')})
+
+
+def ABOUT_US(request):
+	return render(request, 'mainFront/ABOUT_US.html', {'ABOUT_US': Documentation.objects.get(slug='about_us')})

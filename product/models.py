@@ -1,7 +1,6 @@
 from django.db import models
 from collection.models import Collection
 from .const import GENDER_CHOICES, SIZE_CHOICES
-from colorfield.fields import ColorField
 
 
 class Product(models.Model):
@@ -55,7 +54,6 @@ class ProductSize(models.Model):
 class ProductColor(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, default=1)
     color_name = models.CharField(max_length=20, default='white')
-    color = ColorField(default='#FFFFFF', blank=True)
 
     class Meta:
         verbose_name = "Color"
