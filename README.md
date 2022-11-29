@@ -53,13 +53,9 @@ We can clone project here from github, make directorys for static files directly
 
 ###### create basic data (statuses, categories, docs)    
     $ poetry run python manage.py runscript create_basic
-<<<<<<< HEAD
     $ poetry run python manage.py collectstatic
     $ poetry run python manage.py createsuperuser
-=======
-    $ poetry run python collectstatic
-    $ poetry run python createsuperuser
->>>>>>> e539a039e6a1c0ea3c08fb8549339dd86c92dc54
+
     
 ### Nginx 
 
