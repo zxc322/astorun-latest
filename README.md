@@ -27,11 +27,9 @@
     
 ###### And thats it for DB. Now let's make a virtual environment for our site
 
-    $ sudo apt-get install python3-venv
-    $ python3 -m venv venv
-    $ cd && source venv/bin/activate
-
-    ### install poetry instead
+    $ curl -sSL https://install.python-poetry.org | python3 -
+    $ sudo ln -s /home/astorun/.local/bin/poetry /usr/bin/poetry
+    $ poetry --version
     
 ###### And we are inside of virtual environment
 We can clone project here from github, make directorys for static files directly and install all dependencies
@@ -48,27 +46,36 @@ We can clone project here from github, make directorys for static files directly
     
 ###### Now we have everything to create our tables in database and create an administrator
 
-    $ cd astorun_2022
-    $ poetry run python manage.py makemigration
+    $ poetry run python manage.py makemigrations
     $ poetry run python manage.py migrate
 
 ###### create basic data (statuses, categories, docs)    
-    $ poetry run python manage.py create_basic
-    $ poetry run python collectstatic
-    $ poetry run python createsuperuser
+    $ poetry run python manage.py runscript create_basic
+    $ poetry run python manage.py collectstatic
+    $ poetry run python manage.py createsuperuser
     
-###### Nginx settings (we can copy settings files from our project)
+### Nginx 
 
+###### check ports
+
+    $ sudo ufw status verbose
+
+###### port 80 and 443 must be opened. If not do next:
+    $ sudo ufw allow http
+    $ sudo ufw allow https
+
+###### settings (we can copy settings files from our project)
     $ cp /home/zxc/astorun_2022/nginx/astorun.conf /etc/nginx/sites-available/
     $ ln -s /etc/nginx/sites-available/astorun.conf /etc/nginx/sites-enabled/
 
-    ###### also look at /astorun_2022/nginx/nginx.conf (make changes what you need in /etc/nginx/nginx.conf)
+###### [optional] you can also setup cache, firewall or logs file. Change settings in /etc/nginx/nginx.conf
+look example at /astorun_2022/nginx/nginx.conf
     
 ###### SSL certificate for https requests
 
-    $ openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+    $ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
     $ mkdir -p /etc/nginx/snippets/
-    $ nano /etc/nginx/snippets/ssl-params.conf
+    $ sudo nano /etc/nginx/snippets/ssl-params.conf
     
 ###### And just paste next 
 
@@ -86,25 +93,29 @@ We can clone project here from github, make directorys for static files directly
     
 ###### Make certificate with certbot and restart nginx
 
-    $ snap install core
-    $ snap install --classic certbot
+    $ sudo snap install core
+    $ sudo snap install --classic certbot
     $ sudo ln -s /snap/bin/certbot /usr/bin/certbot
-    $ certbot certonly --nginx
+    $ sudo certbot certonly --nginx
     $ sudo systemctl restart nginx
+
+###### Sertificate available for 90 days, but we can provide auto renew (do it as root)
+
+    $ crontab -e
+    $ @daily certbot renew
     
 ###### And at last we need to enable supervisor
 
     $ cd /etc/supervisor/conf.d
-    $ sudo ln /home/zxc/astorun_2022/config/astorun.conf
+    $ sudo ln /home/astorun/astorun_2022/config/astorun.conf
     ***
+    $ whereis gunicorn
+
+###### copy outout into astorun.conf (command=<path>) 
+
     $ sudo update-rc.d supervisor enable
     $ sudo service supervisor start
     $ sudo supervisorctl reread
->If output
-
-    astorun: available
->Do next
-
     $ sudo supervisorctl update
     $ sudo supervisorctl status
 

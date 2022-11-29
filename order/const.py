@@ -1,17 +1,3 @@
-WAITING_FOR_PAYMENT_CONFIRMATION = 'waiting for payment confirmation'
-PREPARING_FOR_SHIP = 'preparing for ship'
-ORDER_THE_WAY = 'order on the way'
-ORDER_SUCCESSFULLY_DELIVERED = 'order successfully delivered'
-
-STATUS_CHOICES = (
-    (WAITING_FOR_PAYMENT_CONFIRMATION, 'waiting for payment confirmation'),
-    (PREPARING_FOR_SHIP,'preparing for ship'),
-    (ORDER_THE_WAY, 'order on the way'),
-    (ORDER_SUCCESSFULLY_DELIVERED, 'order successfully delivered')
-)
-
-#################################################################
-
 VINNYTSKA = 'Вiнницька область'
 VOLYNSKA = 'Волинська область'
 DNIPROPETROVSKA = 'Днiпропетровська область'

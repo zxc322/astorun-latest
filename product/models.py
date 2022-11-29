@@ -65,7 +65,7 @@ class ProductColor(models.Model):
 
 class ProductCategory(models.Model):
     category = models.CharField(max_length=15)
-    slug = models.SlugField(max_length=15, unique=True, db_index=True, verbose_name='URL')
+    slug = models.SlugField(max_length=30, unique=True, db_index=True, verbose_name='URL')
 
     class Meta:
         verbose_name = "Category"
