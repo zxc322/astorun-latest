@@ -53,7 +53,7 @@ We can clone project here from github, make directorys for static files directly
     $ poetry run python manage.py migrate
 
 ###### create basic data (statuses, categories, docs)    
-    $ poetry run python manage.py create_basic
+    $ poetry run python manage.py runscript create_basic
     $ poetry run python collectstatic
     $ poetry run python createsuperuser
     
