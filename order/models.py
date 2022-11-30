@@ -1,7 +1,7 @@
 from django.db import models
 from product.models import Product
-from django.db.models.signals import post_save, post_delete
-from .const import DELIVERY_REGIONS, STATUS_CHOICES
+from django.db.models.signals import post_delete
+from .const import DELIVERY_REGIONS
 
 
 class Order(models.Model):

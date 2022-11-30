@@ -18,7 +18,7 @@ class ProductSizeInline(admin.TabularInline):
     extra = 0
 
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(TranslationAdmin):
 
     list_display = ['id', 'title', 'price', 'category', 'gender', 'collection', 'in_stock']
     list_filter = ['title']

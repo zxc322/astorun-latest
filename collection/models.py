@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import BooleanField
 
-from order.const import STATUS_CHOICES, DELIVERY_REGIONS
+from order.const import DELIVERY_REGIONS
 
 
 class Collection(models.Model):

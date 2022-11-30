@@ -60,7 +60,7 @@ class ProductColor(models.Model):
         verbose_name_plural = "Colors"
 
     def __str__(self):
-        return self.color
+        return self.color_name
 
 
 class ProductCategory(models.Model):
